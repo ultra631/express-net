@@ -64,6 +64,11 @@
   .logo{font-weight:800;font-size:26px;letter-spacing:-0.5px;line-height:1;white-space:nowrap;}
   .logo .ex{background:linear-gradient(180deg,#ffd24a 0%,#fdb913 45%,#f08a00 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
   .logo .net{background:linear-gradient(180deg,#7fd2f5 0%,#2bb0e8 55%,#1880c0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  /* ===== LOGO IMAGE ===== */
+  .logo-img{height:46px;width:auto;display:block;border-radius:10px;}
+  .hero .logo-img{height:120px;margin:0 auto 18px;border-radius:18px;box-shadow:0 12px 34px rgba(0,0,0,0.35);}
+  footer .logo-img{height:64px;margin:0 auto 16px;border-radius:14px;}
+  @media(max-width:820px){.hero .logo-img{height:96px;}}
 
   /* ===== EN-TÊTE ===== */
   header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 18px rgba(18,58,140,0.10);}
@@ -206,7 +211,7 @@
 <!-- ===================== EN-TÊTE ===================== -->
 <header>
   <div class="contenu barre">
-    <a href="#accueil" class="logo"><span class="ex">Express</span><span class="net">.Net</span></a>
+    <a href="#accueil" class="logo"><img src="preview%20(6).webp" alt="Lave-Auto Express.Net" class="logo-img"></a>
     <nav class="nav-liens" id="menu">
       <a href="#forfaits" onclick="fermerMenu()">Forfaits</a>
       <a href="#options" onclick="fermerMenu()">Options</a>
@@ -223,8 +228,8 @@
 <section class="hero" id="accueil">
   <div id="bulles"></div>
   <div class="contenu hero-contenu">
-    <div class="logo"><span class="ex">Express</span><span class="net">.Net</span></div>
-    <p class="accroche">Ton char mérite de briller.</p>
+    <img src="preview%20(6).webp" alt="Lave-Auto Express.Net" class="logo-img">
+    <p class="accroche">Votre véhicule mérite de briller.</p>
     <div class="badge-ouvert"><span class="point-vert"></span> Toujours ouvert · 24h/24 · 7 jours/7</div>
     <div class="hero-confiance"><span class="etoiles">★★★★★</span> 4.6 sur Google · 725 avis</div>
     <div class="hero-boutons">
@@ -344,7 +349,7 @@
     <p class="sous-titre reveal">Tu préfères laver ton véhicule toi-même? Plusieurs postes sont à ta disposition, en tout temps.</p>
     <div class="libre-grille">
       <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-spray-can"></i></div><h3>Postes de lavage</h3><p>Plusieurs postes pour laver soi-même son véhicule, à ton rythme.</p></div>
-      <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-stopwatch"></i></div><h3>Tarif populaire</h3><div class="gros">4&nbsp;$ / 6&nbsp;min</div><p>L'option préférée de nos clients pour un lavage rapide.</p></div>
+      <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-stopwatch"></i></div><h3>Tarif simple</h3><div class="gros">4&nbsp;$ / 6&nbsp;min</div><p>Paie pour le temps dont t'as besoin. Rapide et économique.</p></div>
       <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-wind"></i></div><h3>Aspirateurs</h3><p>Aspirateurs puissants sur place pour un intérieur impeccable.</p></div>
     </div>
   </div>
@@ -382,7 +387,7 @@
 <section id="galerie" class="s-blanc">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Galerie</h2><div class="ligne"></div></div>
-    <p class="sous-titre reveal">Quelques images de nos installations et de chars qui brillent.</p>
+    <p class="sous-titre reveal">Quelques images de nos installations et de véhicules qui brillent.</p>
     <div class="galerie-grille">
       <a class="galerie-tuile reveal" href="preview%20(5).webp" target="_blank" rel="noopener"><img src="preview%20(5).webp" alt="Lave-Auto Express.Net, bâtiment de jour" loading="lazy"><span class="galerie-cap">Nos installations le jour</span></a>
       <a class="galerie-tuile reveal" href="preview%20(4).webp" target="_blank" rel="noopener"><img src="preview%20(4).webp" alt="Lave-Auto Express.Net la nuit" loading="lazy"><span class="galerie-cap">Ouvert même la nuit</span></a>
@@ -435,7 +440,7 @@
 <!-- ===================== PIED DE PAGE ===================== -->
 <footer>
   <div class="contenu">
-    <div class="logo"><span class="ex">Express</span><span class="net">.Net</span></div>
+    <img src="preview%20(6).webp" alt="Lave-Auto Express.Net" class="logo-img">
     <div>
       <a href="https://www.facebook.com/p/Lave-Auto-ExpressNet-100054612331796/" target="_blank" rel="noopener" class="reseau"><i class="fa-brands fa-facebook-f"></i> Suivez-nous sur Facebook</a>
     </div>
