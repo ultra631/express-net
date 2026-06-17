@@ -77,7 +77,7 @@
   .nav-liens a i{margin-left:5px;font-size:13px;color:var(--bleu-eau);}
   .btn-tel-haut{background:var(--jaune);color:var(--noir);font-weight:600;padding:9px 18px;border-radius:50px;font-size:14px;white-space:nowrap;box-shadow:0 6px 16px rgba(253,185,19,0.45);transition:transform .15s;}
   .btn-tel-haut i{margin-left:0;margin-right:6px;color:var(--noir);font-size:14px;}
-  .btn-tel-haut:hover{transform:translateY(-2px);color:var(--noir);}
+  .btn-tel-haut:hover{transform:translateY(-2px) scale(1.04);color:var(--noir);}
   .btn-langue{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--bleu-royal);border:1.5px solid var(--bleu-royal);font-family:inherit;font-weight:600;font-size:14px;padding:8px 14px;border-radius:50px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;}
   .btn-langue:hover{background:var(--bleu-royal);color:#fff;}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
@@ -106,7 +106,7 @@
   .hero-boutons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
   .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;padding:15px 30px;border-radius:50px;transition:transform .15s,box-shadow .15s;cursor:pointer;border:none;}
   .btn i{font-size:16px;}
-  .btn:hover{transform:translateY(-3px);}
+  .btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 30px rgba(43,176,232,0.45);}
   .btn:active{transform:scale(0.97);}
   .btn-jaune{background:var(--jaune);color:var(--noir);box-shadow:0 10px 24px rgba(253,185,19,0.5);}
   .btn-bordure{background:rgba(255,255,255,0.10);color:#fff;border:2px solid rgba(255,255,255,0.55);}
@@ -121,6 +121,16 @@
   .carte-forfait:hover{transform:translateY(-8px);box-shadow:var(--ombre-forte);}
   .carte-forfait.vedette{border-color:var(--bleu-eau);box-shadow:0 0 0 4px rgba(43,176,232,0.12),0 20px 48px rgba(43,176,232,0.30);transform:translateY(-6px);}
   .carte-forfait.vedette:hover{transform:translateY(-12px);}
+  .forfaits-grille .carte-forfait{transition:transform .5s ease,opacity .5s ease,box-shadow .22s;}
+  .forfaits-grille .carte-forfait:nth-child(2){transition-delay:.1s;}
+  .forfaits-grille .carte-forfait:nth-child(3){transition-delay:.2s;}
+  .forfaits-grille .carte-forfait:nth-child(4){transition-delay:.3s;}
+  .forfaits-grille .carte-forfait:hover{transition:transform .2s ease,box-shadow .2s;transition-delay:0s;}
+  /* Compteurs stats */
+  .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:44px;}
+  .stat{flex:1 1 150px;max-width:220px;text-align:center;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-radius:var(--radius);padding:24px 18px;}
+  .stat .num{font-size:40px;font-weight:800;color:var(--jaune);line-height:1;}
+  .stat .lab{font-size:14px;color:#cfe3ff;margin-top:8px;}
   .ruban{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--rouge);color:#fff;font-weight:600;font-size:13px;padding:7px 18px;border-radius:50px;white-space:nowrap;box-shadow:0 8px 18px rgba(226,35,26,0.4);display:inline-flex;align-items:center;gap:6px;}
   .nom-forfait{font-weight:700;font-size:22px;color:var(--bleu-royal);margin-bottom:4px;}
   .nom-forfait.or{color:var(--jaune-fonce);}
@@ -393,6 +403,11 @@
 <section id="pourquoi" class="s-sombre">
   <div class="contenu">
     <div class="titre-section reveal"><h2 class="i18n" data-fr="Pourquoi nous choisir" data-en="Why choose us">Pourquoi nous choisir</h2><div class="ligne"></div></div>
+    <div class="stats reveal">
+      <div class="stat"><div class="num" data-cible="725" data-suf="+">0</div><div class="lab i18n" data-fr="Avis Google" data-en="Google reviews">Avis Google</div></div>
+      <div class="stat"><div class="num" data-cible="4.6" data-dec="1">0</div><div class="lab i18n" data-fr="Note Google" data-en="Google rating">Note Google</div></div>
+      <div class="stat"><div class="num" data-cible="24" data-suf="/7">0</div><div class="lab i18n" data-fr="Toujours ouvert" data-en="Always open">Toujours ouvert</div></div>
+    </div>
     <div class="pourquoi-grille">
       <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-clock"></i></div><h3 class="i18n" data-fr="Ouvert 24h/24" data-en="Open 24/7">Ouvert 24h/24</h3><p class="i18n" data-fr="7 jours sur 7, jour et nuit. On ne dort jamais." data-en="7 days a week, day and night. We never sleep.">7 jours sur 7, jour et nuit. On ne dort jamais.</p></div>
       <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-star"></i></div><h3 class="i18n" data-fr="4.6 sur Google" data-en="4.6 on Google">4.6 sur Google</h3><div class="etoiles">★★★★★</div><p class="i18n" data-fr="725 avis de clients satisfaits." data-en="725 reviews from happy customers.">725 avis de clients satisfaits.</p></div>
@@ -562,6 +577,40 @@
       },{threshold:0.12});
       elems.forEach(function(e){obs.observe(e);});
     }
+  })();
+
+  /* Compteurs animés */
+  (function(){
+    var stats = document.querySelector('.stats');
+    if(!stats) return;
+    var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nums = stats.querySelectorAll('.num');
+    function finalise(el){
+      var c=parseFloat(el.getAttribute('data-cible'));
+      var d=parseInt(el.getAttribute('data-dec')||'0');
+      el.textContent = c.toFixed(d) + (el.getAttribute('data-suf')||'');
+    }
+    function animer(el){
+      var c=parseFloat(el.getAttribute('data-cible'));
+      var d=parseInt(el.getAttribute('data-dec')||'0');
+      var suf=el.getAttribute('data-suf')||'';
+      var dur=650, t0=null;
+      function pas(ts){
+        if(!t0) t0=ts;
+        var p=Math.min((ts-t0)/dur,1);
+        var ease=1-Math.pow(1-p,2);
+        el.textContent=(c*ease).toFixed(d)+suf;
+        if(p<1) requestAnimationFrame(pas); else el.textContent=c.toFixed(d)+suf;
+      }
+      requestAnimationFrame(pas);
+    }
+    function lancer(){ nums.forEach(animer); }
+    if(reduit){ nums.forEach(finalise); return; }
+    if(!('IntersectionObserver' in window)){ lancer(); return; }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ lancer(); obs.disconnect(); } });
+    },{threshold:0.4});
+    obs.observe(stats);
   })();
 
   /* Appliquer la langue au chargement */
