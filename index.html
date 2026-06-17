@@ -154,8 +154,8 @@
   .chien .etiquette{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1463a8;font-weight:700;padding:10px 22px;border-radius:50px;font-size:15px;}
 
   /* ===== POURQUOI NOUS ===== */
-  .pourquoi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
-  .pourquoi-carte{text-align:center;background:#fff;border:1px solid #e7edf6;border-radius:var(--radius);padding:32px 22px;box-shadow:0 14px 34px rgba(0,0,0,0.22);transition:transform .2s;}
+  .pourquoi-grille{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+  .pourquoi-carte{flex:1 1 200px;max-width:240px;text-align:center;background:#fff;border:1px solid #e7edf6;border-radius:var(--radius);padding:32px 22px;box-shadow:0 14px 34px rgba(0,0,0,0.22);transition:transform .2s;}
   .pourquoi-carte:hover{transform:translateY(-6px);}
   .pourquoi-carte .rond-ico{width:66px;height:66px;border-radius:50%;background:var(--bleu-eau-clair);display:flex;align-items:center;justify-content:center;font-size:27px;margin:0 auto 14px;color:var(--bleu-eau);}
   .pourquoi-carte h3{font-size:18px;font-weight:700;color:var(--bleu-royal);margin-bottom:6px;}
@@ -378,6 +378,7 @@
       <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-star"></i></div><h3>4.6 sur Google</h3><div class="etoiles">★★★★★</div><p>725 avis de clients satisfaits.</p></div>
       <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-arrows-spin"></i></div><h3>LaserWash 360°</h3><p>Équipement automatique haut de gamme, sans contact.</p></div>
       <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-credit-card"></i></div><h3>Paiement facile</h3><p>Visa, Mastercard, argent comptant &amp; monnaie.</p></div>
+      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-bolt"></i></div><h3>Lavage rapide</h3><p>Ton véhicule propre en quelques minutes — pis t'es reparti.</p></div>
     </div>
   </div>
   <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#ffffff" d="M0,46 C200,12 400,70 660,44 C920,18 1180,64 1440,38 L1440,80 L0,80 Z"></path></svg></div>
