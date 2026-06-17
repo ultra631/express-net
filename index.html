@@ -29,7 +29,16 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{font-family:'Poppins',sans-serif;color:var(--noir);background:var(--blanc);line-height:1.6;overflow-x:hidden;}
+  html{background:linear-gradient(180deg,#ffffff 0%,#eaf4ff 55%,#e3f0fb 100%);}
+  body{font-family:'Poppins',sans-serif;color:var(--noir);background:transparent;line-height:1.6;overflow-x:hidden;}
+  #fond{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;}
+  #fond .lueur{position:absolute;border-radius:50%;filter:blur(72px);}
+  #fond .lueur.l1{width:440px;height:440px;background:rgba(43,176,232,0.22);top:-130px;right:-110px;}
+  #fond .lueur.l2{width:380px;height:380px;background:rgba(253,185,19,0.14);bottom:-130px;left:-100px;}
+  #fond .lueur.l3{width:340px;height:340px;background:rgba(43,176,232,0.13);top:46%;left:40%;}
+  #fond .b{position:absolute;bottom:-90px;border-radius:50%;background:radial-gradient(circle at 34% 30%,rgba(255,255,255,0.75),rgba(43,176,232,0.20));border:1px solid rgba(43,176,232,0.14);animation:flotter linear infinite;}
+  @keyframes flotter{0%{transform:translateY(0) scale(0.6);opacity:0;}12%{opacity:0.6;}100%{transform:translateY(-118vh) scale(1);opacity:0;}}
+  @media (prefers-reduced-motion:reduce){#fond .b{display:none;}}
   a{text-decoration:none;color:inherit;}
   img{max-width:100%;display:block;}
   .contenu{width:100%;max-width:1140px;margin:0 auto;padding:0 20px;}
@@ -205,6 +214,8 @@
 </head>
 <body>
 
+<div id="fond"><span class="lueur l1"></span><span class="lueur l2"></span><span class="lueur l3"></span></div>
+
 <!-- ===================== EN-TÊTE ===================== -->
 <header>
   <div class="contenu barre">
@@ -317,7 +328,7 @@
 </section>
 
 <!-- ===================== OPTIONS ===================== -->
-<section id="options" style="background:var(--gris-pale);">
+<section id="options" style="background:rgba(231,243,252,0.55);">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Les options de lavage</h2><div class="ligne"></div></div>
     <p class="sous-titre reveal">Chaque forfait combine plusieurs de ces traitements pour un fini impeccable.</p>
@@ -363,7 +374,7 @@
 </section>
 
 <!-- ===================== POURQUOI NOUS ===================== -->
-<section id="pourquoi" style="background:var(--gris-pale);">
+<section id="pourquoi" style="background:rgba(231,243,252,0.55);">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Pourquoi nous choisir</h2><div class="ligne"></div></div>
     <div class="pourquoi-grille">
@@ -392,7 +403,7 @@
 </section>
 
 <!-- ===================== CONTACT ===================== -->
-<section id="contact" style="background:var(--gris-pale);">
+<section id="contact" style="background:rgba(231,243,252,0.55);">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Nous trouver</h2><div class="ligne"></div></div>
     <p class="sous-titre reveal">On est ouvert en tout temps — passe quand ça te convient!</p>
@@ -464,6 +475,24 @@
       b.style.animationDuration = (Math.random()*10+9).toFixed(1)+'s';
       b.style.animationDelay = (Math.random()*8).toFixed(1)+'s';
       zone.appendChild(b);
+    }
+  })();
+
+  /* Bulles d'ambiance sur tout le fond du site */
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var fond = document.getElementById('fond');
+    if(!fond) return;
+    for(var i=0;i<16;i++){
+      var b = document.createElement('span');
+      b.className = 'b';
+      var t = Math.round(Math.random()*64+16);
+      b.style.width = t+'px';
+      b.style.height = t+'px';
+      b.style.left = Math.round(Math.random()*100)+'%';
+      b.style.animationDuration = (Math.random()*16+16).toFixed(1)+'s';
+      b.style.animationDelay = (Math.random()*16).toFixed(1)+'s';
+      fond.appendChild(b);
     }
   })();
 
