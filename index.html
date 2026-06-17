@@ -98,6 +98,11 @@
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(70,227,106,0.55);}70%{box-shadow:0 0 0 10px rgba(70,227,106,0);}100%{box-shadow:0 0 0 0 rgba(70,227,106,0);}}
   .hero-confiance{display:flex;align-items:center;justify-content:center;gap:8px;color:#bcd4f5;font-size:14px;margin-bottom:30px;}
   .hero-confiance .etoiles{color:var(--jaune);letter-spacing:1px;}
+  .hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:30px;}
+  .hero-badges .bdg{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;padding:8px 15px;border-radius:50px;backdrop-filter:blur(4px);}
+  .hero-badges .bdg i{font-size:13px;}
+  .hero-badges .bdg .or{color:var(--jaune);}
+  .hero-badges .bdg .vert{color:#5fe38a;}
   .hero-boutons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
   .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;padding:15px 30px;border-radius:50px;transition:transform .15s,box-shadow .15s;cursor:pointer;border:none;}
   .btn i{font-size:16px;}
@@ -241,6 +246,12 @@
     <p class="accroche i18n" data-fr="Votre véhicule mérite de briller." data-en="Your vehicle deserves to shine.">Votre véhicule mérite de briller.</p>
     <div class="badge-ouvert"><span class="point-vert"></span> <span class="i18n" data-fr="Toujours ouvert · 24h/24 · 7 jours/7" data-en="Always open · 24/7">Toujours ouvert · 24h/24 · 7 jours/7</span></div>
     <div class="hero-confiance"><span class="etoiles">★★★★★</span> <span class="i18n" data-fr="4.6 sur Google · 725 avis" data-en="4.6 on Google · 725 reviews">4.6 sur Google · 725 avis</span></div>
+    <div class="hero-badges">
+      <span class="bdg"><i class="fa-solid fa-star or"></i> 4.6 ★ Google</span>
+      <span class="bdg"><i class="fa-brands fa-google"></i> <span class="i18n" data-fr="725+ avis" data-en="725+ reviews">725+ avis</span></span>
+      <span class="bdg"><i class="fa-solid fa-hand-sparkles"></i> <span class="i18n" data-fr="Sans contact" data-en="Touchless">Sans contact</span></span>
+      <span class="bdg"><i class="fa-solid fa-leaf vert"></i> <span class="i18n" data-fr="Écoresponsable" data-en="Eco-friendly">Écoresponsable</span></span>
+    </div>
     <div class="hero-boutons">
       <a href="tel:+15146233766" class="btn btn-jaune"><i class="fa-solid fa-phone"></i> <span class="i18n" data-fr="Appeler" data-en="Call">Appeler</span></a>
       <a href="https://www.google.com/maps/dir/?api=1&destination=11360+Rue+Sherbrooke+Est,+Montr%C3%A9al-Est,+QC+H1B+1B9" target="_blank" rel="noopener" class="btn btn-bordure"><i class="fa-solid fa-location-dot"></i> <span class="i18n" data-fr="Itinéraire" data-en="Directions">Itinéraire</span></a>
