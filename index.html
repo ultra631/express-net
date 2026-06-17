@@ -81,7 +81,7 @@
   .burger span{width:26px;height:3px;background:var(--bleu-royal);border-radius:3px;transition:.3s;}
 
   /* ===== HÉRO ===== */
-  .hero{position:relative;background:radial-gradient(120% 100% at 50% 0%,#1a4aa8 0%,var(--bleu-fonce) 55%,var(--bleu-nuit) 100%);color:#fff;text-align:center;padding:80px 0 120px;overflow:hidden;min-height:90vh;display:flex;flex-direction:column;justify-content:center;}
+  .hero{position:relative;background:radial-gradient(120% 100% at 50% 0%,rgba(26,74,168,0.55) 0%,rgba(10,34,90,0.85) 55%,rgba(6,22,61,0.92) 100%),url('preview%20(5).webp') center/cover no-repeat;color:#fff;text-align:center;padding:80px 0 120px;overflow:hidden;min-height:90vh;display:flex;flex-direction:column;justify-content:center;}
   .bulle-anim{position:absolute;bottom:-40px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);animation:monter linear infinite;}
   @keyframes monter{
     0%{transform:translateY(0) scale(0.6);opacity:0;}
@@ -159,10 +159,10 @@
 
   /* ===== GALERIE ===== */
   .galerie-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
-  .galerie-tuile{aspect-ratio:4/3;background:linear-gradient(135deg,#e6f4fc,#d4e9f7);border:2px dashed #a9cfe8;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#5f93b8;transition:transform .2s;}
+  .galerie-tuile{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;box-shadow:var(--ombre);display:block;transition:transform .2s;}
   .galerie-tuile:hover{transform:scale(1.03);}
-  .galerie-tuile .ico-cam{font-size:30px;}
-  .galerie-tuile span{font-size:13px;font-weight:500;}
+  .galerie-tuile img{width:100%;height:100%;object-fit:cover;display:block;}
+  .galerie-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(6,22,61,0.78));color:#fff;font-size:13px;font-weight:500;padding:22px 10px 9px;text-align:center;}
 
   /* ===== CONTACT ===== */
   .contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;}
@@ -382,14 +382,12 @@
 <section id="galerie" class="s-blanc">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Galerie</h2><div class="ligne"></div></div>
-    <p class="sous-titre reveal">Quelques images de nos installations et de chars qui brillent. (Photos à venir.)</p>
+    <p class="sous-titre reveal">Quelques images de nos installations et de chars qui brillent.</p>
     <div class="galerie-grille">
-      <div class="galerie-tuile reveal"><div class="ico-cam"><i class="fa-solid fa-camera"></i></div><span>Photo à venir</span></div>
-      <div class="galerie-tuile reveal"><div class="ico-cam"><i class="fa-solid fa-camera"></i></div><span>Photo à venir</span></div>
-      <div class="galerie-tuile reveal"><div class="ico-cam"><i class="fa-solid fa-camera"></i></div><span>Photo à venir</span></div>
-      <div class="galerie-tuile reveal"><div class="ico-cam"><i class="fa-solid fa-camera"></i></div><span>Photo à venir</span></div>
-      <div class="galerie-tuile reveal"><div class="ico-cam"><i class="fa-solid fa-camera"></i></div><span>Photo à venir</span></div>
-      <div class="galerie-tuile reveal"><div class="ico-cam"><i class="fa-solid fa-camera"></i></div><span>Photo à venir</span></div>
+      <a class="galerie-tuile reveal" href="preview%20(5).webp" target="_blank" rel="noopener"><img src="preview%20(5).webp" alt="Lave-Auto Express.Net, bâtiment de jour" loading="lazy"><span class="galerie-cap">Nos installations le jour</span></a>
+      <a class="galerie-tuile reveal" href="preview%20(4).webp" target="_blank" rel="noopener"><img src="preview%20(4).webp" alt="Lave-Auto Express.Net la nuit" loading="lazy"><span class="galerie-cap">Ouvert même la nuit</span></a>
+      <a class="galerie-tuile reveal" href="preview%20(3).webp" target="_blank" rel="noopener"><img src="preview%20(3).webp" alt="Borne de paiement libre-service" loading="lazy"><span class="galerie-cap">Borne libre-service</span></a>
+      <a class="galerie-tuile reveal" href="preview%20(2).webp" target="_blank" rel="noopener"><img src="preview%20(2).webp" alt="Panneau des forfaits Express.Net" loading="lazy"><span class="galerie-cap">Nos forfaits affichés</span></a>
     </div>
   </div>
   <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#e3f0fb" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path></svg></div>
