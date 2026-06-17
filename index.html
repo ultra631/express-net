@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lave-Auto Express.Net — Toujours ouvert 24h/24, 7j/7 | Montréal-Est</title>
+<meta name="description" content="Lave-Auto Express.Net à Montréal-Est. Lavage automatique LaserWash 360°, libre-service, détaillage et station pour chien. Ouvert 24h/24, 7 jours/7. 4.6★ (725 avis).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bleu-royal:#123a8c;
+    --bleu-fonce:#0d2a66;
+    --bleu-eau:#2bb0e8;
+    --bleu-eau-clair:#e6f4fc;
+    --jaune:#fdb913;
+    --jaune-fonce:#c98e00;
+    --rouge:#e2231a;
+    --blanc:#ffffff;
+    --gris-pale:#f4f7fb;
+    --gris-texte:#5b6470;
+    --noir:#13203a;
+    --ombre:0 10px 30px rgba(18,58,140,0.12);
+    --ombre-forte:0 16px 40px rgba(18,58,140,0.22);
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',sans-serif;color:var(--noir);background:var(--blanc);line-height:1.6;overflow-x:hidden;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .contenu{width:100%;max-width:1140px;margin:0 auto;padding:0 20px;}
+  section{padding:64px 0;}
+  .titre-section{text-align:center;margin-bottom:14px;}
+  .titre-section h2{font-size:clamp(26px,6vw,40px);font-weight:800;color:var(--bleu-royal);letter-spacing:-0.5px;}
+  .titre-section .ligne{width:64px;height:5px;background:var(--jaune);border-radius:4px;margin:14px auto 0;}
+  .sous-titre{text-align:center;color:var(--gris-texte);max-width:620px;margin:0 auto 40px;font-size:16px;}
+
+  /* ===== LOGO TEXTE ===== */
+  .logo{font-weight:800;font-size:26px;letter-spacing:-0.5px;line-height:1;white-space:nowrap;}
+  .logo .ex{background:linear-gradient(180deg,#ffd24a 0%,#fdb913 45%,#f08a00 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .logo .net{background:linear-gradient(180deg,#7fd2f5 0%,#2bb0e8 55%,#1880c0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+
+  /* ===== EN-TÊTE ===== */
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);box-shadow:0 2px 14px rgba(18,58,140,0.10);}
+  .barre{display:flex;align-items:center;justify-content:space-between;height:66px;}
+  .nav-liens{display:flex;align-items:center;gap:24px;}
+  .nav-liens a{font-weight:500;font-size:15px;color:var(--noir);transition:color .2s;}
+  .nav-liens a:hover{color:var(--bleu-eau);}
+  .btn-tel-haut{background:var(--jaune);color:var(--noir);font-weight:600;padding:9px 18px;border-radius:50px;font-size:14px;white-space:nowrap;box-shadow:0 4px 12px rgba(253,185,19,0.4);}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .burger span{width:26px;height:3px;background:var(--bleu-royal);border-radius:3px;transition:.3s;}
+
+  /* ===== HÉRO ===== */
+  .hero{position:relative;background:linear-gradient(160deg,var(--bleu-royal) 0%,var(--bleu-fonce) 100%);color:#fff;text-align:center;padding:80px 0 90px;overflow:hidden;}
+  .hero .bulle{position:absolute;border-radius:50%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.10);}
+  .hero .b1{width:90px;height:90px;top:8%;left:6%;}
+  .hero .b2{width:46px;height:46px;top:22%;right:12%;}
+  .hero .b3{width:130px;height:130px;bottom:-20px;left:14%;}
+  .hero .b4{width:60px;height:60px;bottom:18%;right:8%;}
+  .hero .b5{width:30px;height:30px;top:50%;left:42%;}
+  .hero-contenu{position:relative;z-index:2;}
+  .hero .logo{font-size:clamp(40px,11vw,72px);margin-bottom:6px;}
+  .hero .accroche{font-size:clamp(17px,4.5vw,24px);font-weight:500;color:#cfe3ff;margin-bottom:18px;}
+  .badge-ouvert{display:inline-flex;align-items:center;gap:8px;background:var(--rouge);color:#fff;font-weight:600;font-size:clamp(14px,3.6vw,17px);padding:10px 22px;border-radius:50px;box-shadow:0 8px 20px rgba(226,35,26,0.4);margin-bottom:30px;}
+  .point-vert{width:10px;height:10px;background:#46e36a;border-radius:50%;box-shadow:0 0 0 4px rgba(70,227,106,0.35);}
+  .hero-boutons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;padding:15px 28px;border-radius:50px;transition:transform .15s,box-shadow .15s;cursor:pointer;border:none;}
+  .btn:active{transform:scale(0.97);}
+  .btn-jaune{background:var(--jaune);color:var(--noir);box-shadow:0 8px 20px rgba(253,185,19,0.45);}
+  .btn-bordure{background:rgba(255,255,255,0.10);color:#fff;border:2px solid rgba(255,255,255,0.55);}
+  .btn-bleu{background:var(--bleu-eau);color:#fff;box-shadow:0 8px 20px rgba(43,176,232,0.4);}
+  .vague{position:absolute;bottom:-1px;left:0;width:100%;line-height:0;z-index:1;}
+
+  /* ===== FORFAITS ===== */
+  .forfaits-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:10px;}
+  .carte-forfait{position:relative;background:#fff;border:2px solid #e7edf6;border-radius:var(--radius);padding:28px 22px;box-shadow:var(--ombre);transition:transform .2s,box-shadow .2s;}
+  .carte-forfait:hover{transform:translateY(-6px);box-shadow:var(--ombre-forte);}
+  .carte-forfait.vedette{border-color:var(--bleu-eau);box-shadow:0 16px 40px rgba(43,176,232,0.28);}
+  .ruban{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--rouge);color:#fff;font-weight:600;font-size:13px;padding:6px 16px;border-radius:50px;white-space:nowrap;box-shadow:0 6px 14px rgba(226,35,26,0.35);}
+  .nom-forfait{font-weight:700;font-size:21px;color:var(--bleu-royal);margin-bottom:4px;}
+  .nom-forfait.or{color:var(--jaune-fonce);}
+  .prix{font-size:42px;font-weight:800;color:var(--noir);line-height:1;}
+  .prix span{font-size:18px;font-weight:600;}
+  .taxes{font-size:12px;color:var(--gris-texte);margin-bottom:18px;}
+  .liste-inclus{list-style:none;text-align:left;}
+  .liste-inclus li{display:flex;align-items:flex-start;gap:9px;font-size:14px;padding:6px 0;color:#2a3550;}
+  .liste-inclus li.non{color:#b7bfcc;}
+  .coche{flex-shrink:0;width:20px;height:20px;background:var(--bleu-eau);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px;}
+  .liste-inclus li.non .coche{background:#e7edf6;color:#fff;}
+
+  /* ===== OPTIONS ===== */
+  .options-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+  .opt{background:var(--gris-pale);border-radius:14px;padding:20px 16px;text-align:center;transition:transform .2s,background .2s;}
+  .opt:hover{transform:translateY(-4px);background:#fff;box-shadow:var(--ombre);}
+  .opt .rond{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 12px;}
+  .opt h4{font-size:15px;font-weight:600;color:var(--noir);}
+
+  /* ===== BANDES SOMBRES ===== */
+  .bande-bleue{background:linear-gradient(160deg,var(--bleu-royal),var(--bleu-fonce));color:#fff;}
+  .bande-bleue h2{color:#fff;}
+  .bande-bleue .ligne{background:var(--jaune);}
+  .bande-bleue .sous-titre{color:#cfe3ff;}
+
+  /* ===== LIBRE-SERVICE ===== */
+  .libre-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .libre-carte{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius);padding:28px 22px;text-align:center;}
+  .libre-carte .emoji{font-size:40px;margin-bottom:12px;}
+  .libre-carte h3{font-size:19px;font-weight:700;margin-bottom:8px;}
+  .libre-carte .gros{font-size:30px;font-weight:800;color:var(--jaune);margin:6px 0;}
+  .libre-carte p{color:#cfe3ff;font-size:15px;}
+
+  /* ===== DÉTAILLAGE ===== */
+  .detail-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+  .detail-item{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid #e7edf6;border-radius:14px;padding:16px 18px;box-shadow:0 4px 14px rgba(18,58,140,0.06);}
+  .detail-item .ico{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:var(--bleu-eau-clair);display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .detail-item span{font-size:15px;font-weight:500;color:#2a3550;}
+  .detail-note{text-align:center;margin-top:30px;}
+  .detail-note p{color:var(--gris-texte);margin-bottom:16px;font-size:15px;}
+
+  /* ===== CHIEN ===== */
+  .chien{background:linear-gradient(135deg,#2bb0e8,#1880c0);color:#fff;border-radius:24px;padding:46px 30px;text-align:center;position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(24,128,192,0.3);}
+  .chien .gros-emoji{font-size:60px;margin-bottom:10px;}
+  .chien h2{font-size:clamp(26px,6vw,38px);font-weight:800;color:#fff;margin-bottom:12px;}
+  .chien p{max-width:560px;margin:0 auto 22px;font-size:17px;color:#eaf7ff;}
+  .chien .etiquette{display:inline-block;background:#fff;color:#1880c0;font-weight:700;padding:9px 20px;border-radius:50px;font-size:15px;}
+
+  /* ===== POURQUOI NOUS ===== */
+  .pourquoi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .pourquoi-carte{text-align:center;background:#fff;border:1px solid #e7edf6;border-radius:var(--radius);padding:30px 22px;box-shadow:var(--ombre);}
+  .pourquoi-carte .rond-ico{width:64px;height:64px;border-radius:50%;background:var(--bleu-eau-clair);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 14px;}
+  .pourquoi-carte h3{font-size:18px;font-weight:700;color:var(--bleu-royal);margin-bottom:6px;}
+  .pourquoi-carte p{font-size:14px;color:var(--gris-texte);}
+  .etoiles{color:var(--jaune);font-size:20px;letter-spacing:2px;}
+
+  /* ===== GALERIE ===== */
+  .galerie-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
+  .galerie-tuile{aspect-ratio:4/3;background:linear-gradient(135deg,#e6f4fc,#d4e9f7);border:2px dashed #a9cfe8;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#5f93b8;}
+  .galerie-tuile .ico-cam{font-size:34px;}
+  .galerie-tuile span{font-size:13px;font-weight:500;}
+
+  /* ===== CONTACT ===== */
+  .contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;}
+  .contact-infos{display:flex;flex-direction:column;gap:18px;}
+  .info-ligne{display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #e7edf6;border-radius:14px;padding:18px;box-shadow:0 4px 14px rgba(18,58,140,0.06);}
+  .info-ligne .ico{flex-shrink:0;width:46px;height:46px;border-radius:12px;background:var(--bleu-royal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;}
+  .info-ligne h4{font-size:15px;font-weight:700;color:var(--bleu-royal);margin-bottom:2px;}
+  .info-ligne a,.info-ligne p{font-size:15px;color:#2a3550;}
+  .info-ligne a:hover{color:var(--bleu-eau);}
+  .carte-maps{border-radius:16px;overflow:hidden;box-shadow:var(--ombre);min-height:340px;}
+  .carte-maps iframe{width:100%;height:100%;min-height:340px;border:0;}
+  .contact-boutons{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;}
+
+  /* ===== PIED DE PAGE ===== */
+  footer{background:var(--bleu-fonce);color:#cfe3ff;padding:46px 0 24px;text-align:center;}
+  footer .logo{font-size:34px;margin-bottom:14px;}
+  .reseau{display:inline-flex;align-items:center;gap:9px;background:#1877f2;color:#fff;font-weight:600;padding:11px 22px;border-radius:50px;font-size:15px;margin-bottom:22px;}
+  footer .adr{font-size:14px;color:#9fb8dd;margin-bottom:6px;}
+  footer .droits{font-size:13px;color:#7d96ba;border-top:1px solid rgba(255,255,255,0.12);padding-top:18px;margin-top:18px;}
+
+  /* ===== BOUTON APPEL FLOTTANT (mobile) ===== */
+  .appel-flottant{position:fixed;bottom:18px;right:18px;z-index:90;background:var(--jaune);color:var(--noir);width:60px;height:60px;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 22px rgba(253,185,19,0.55);}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:820px){
+    .nav-liens{position:fixed;top:66px;left:0;width:100%;background:#fff;flex-direction:column;gap:0;padding:0;max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 14px 24px rgba(18,58,140,0.12);}
+    .nav-liens.ouvert{max-height:460px;}
+    .nav-liens a{width:100%;padding:15px 20px;border-bottom:1px solid #eef2f8;}
+    .nav-liens .btn-tel-haut{margin:14px 20px;text-align:center;}
+    .burger{display:flex;}
+    .contact-grille{grid-template-columns:1fr;}
+    section{padding:48px 0;}
+    .appel-flottant{display:flex;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== EN-TÊTE ===================== -->
+<header>
+  <div class="contenu barre">
+    <a href="#accueil" class="logo"><span class="ex">Express</span><span class="net">.Net</span></a>
+    <nav class="nav-liens" id="menu">
+      <a href="#forfaits" onclick="fermerMenu()">Forfaits</a>
+      <a href="#options" onclick="fermerMenu()">Options</a>
+      <a href="#libre-service" onclick="fermerMenu()">Libre-service</a>
+      <a href="#detaillage" onclick="fermerMenu()">Détaillage</a>
+      <a href="#chien" onclick="fermerMenu()">Chien 🐕</a>
+      <a href="#contact" onclick="fermerMenu()">Contact</a>
+      <a href="tel:+15146233766" class="btn-tel-haut">📞 (514) 623-3766</a>
+    </nav>
+    <button class="burger" onclick="basculerMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===================== HÉRO ===================== -->
+<section class="hero" id="accueil">
+  <div class="bulle b1"></div><div class="bulle b2"></div><div class="bulle b3"></div><div class="bulle b4"></div><div class="bulle b5"></div>
+  <div class="contenu hero-contenu">
+    <div class="logo"><span class="ex">Express</span><span class="net">.Net</span></div>
+    <p class="accroche">Ton char mérite de briller.</p>
+    <div class="badge-ouvert"><span class="point-vert"></span> Toujours ouvert · 24h/24 · 7 jours/7</div>
+    <div class="hero-boutons">
+      <a href="tel:+15146233766" class="btn btn-jaune">📞 Appeler</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=11360+Rue+Sherbrooke+Est,+Montr%C3%A9al-Est,+QC+H1B+1B9" target="_blank" rel="noopener" class="btn btn-bordure">📍 Itinéraire</a>
+    </div>
+  </div>
+  <div class="vague">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:60px;display:block;">
+      <path fill="#ffffff" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== FORFAITS ===================== -->
+<section id="forfaits">
+  <div class="contenu">
+    <div class="titre-section"><h2>Nos forfaits de lavage</h2><div class="ligne"></div></div>
+    <p class="sous-titre">Lavage automatique LaserWash 360°. Choisis ton niveau de brillance — taxes incluses, aucune surprise.</p>
+    <div class="forfaits-grille">
+
+      <!-- CLASSIQUE -->
+      <div class="carte-forfait">
+        <div class="nom-forfait">Classique</div>
+        <div class="prix"><span>$</span>7</div>
+        <div class="taxes">taxes incluses</div>
+        <ul class="liste-inclus">
+          <li><span class="coche">✓</span> Savon pré-trempage</li>
+          <li><span class="coche">✓</span> Rinçage haute pression</li>
+          <li><span class="coche">✓</span> Canon haute pression</li>
+          <li><span class="coche">✓</span> Séchoir puissant</li>
+        </ul>
+      </div>
+
+      <!-- SUPRÊME -->
+      <div class="carte-forfait">
+        <div class="nom-forfait">Suprême</div>
+        <div class="prix"><span>$</span>9</div>
+        <div class="taxes">taxes incluses</div>
+        <ul class="liste-inclus">
+          <li><span class="coche">✓</span> Savon pré-trempage</li>
+          <li><span class="coche">✓</span> Rinçage haute pression</li>
+          <li><span class="coche">✓</span> Canon haute pression</li>
+          <li><span class="coche">✓</span> Séchoir puissant</li>
+          <li><span class="coche">✓</span> Cire de protection</li>
+          <li><span class="coche">✓</span> Savon mousse à couleurs</li>
+          <li><span class="coche">✓</span> Séchoir +</li>
+        </ul>
+      </div>
+
+      <!-- ROYAL -->
+      <div class="carte-forfait">
+        <div class="nom-forfait">Royal</div>
+        <div class="prix"><span>$</span>11</div>
+        <div class="taxes">taxes incluses</div>
+        <ul class="liste-inclus">
+          <li><span class="coche">✓</span> Savon pré-trempage</li>
+          <li><span class="coche">✓</span> Rinçage haute pression</li>
+          <li><span class="coche">✓</span> Canon haute pression</li>
+          <li><span class="coche">✓</span> Séchoir puissant</li>
+          <li><span class="coche">✓</span> Cire de protection</li>
+          <li><span class="coche">✓</span> Savon mousse à couleurs</li>
+          <li><span class="coche">✓</span> Séchoir +</li>
+          <li><span class="coche">✓</span> Jet d'eau</li>
+          <li><span class="coche">✓</span> Protecteur Rain-X</li>
+        </ul>
+      </div>
+
+      <!-- EXPRESS.NET (vedette) -->
+      <div class="carte-forfait vedette">
+        <div class="ruban">★ Le plus populaire</div>
+        <div class="nom-forfait or">Express.Net</div>
+        <div class="prix"><span>$</span>13</div>
+        <div class="taxes">taxes incluses · le plus complet</div>
+        <ul class="liste-inclus">
+          <li><span class="coche">✓</span> Savon pré-trempage</li>
+          <li><span class="coche">✓</span> Rinçage haute pression</li>
+          <li><span class="coche">✓</span> Canon haute pression</li>
+          <li><span class="coche">✓</span> Séchoir puissant</li>
+          <li><span class="coche">✓</span> Cire de protection</li>
+          <li><span class="coche">✓</span> Savon mousse à couleurs</li>
+          <li><span class="coche">✓</span> Séchoir +</li>
+          <li><span class="coche">✓</span> Jet d'eau</li>
+          <li><span class="coche">✓</span> Protecteur Rain-X</li>
+          <li><span class="coche">✓</span> Lubrifiant antirouille</li>
+          <li><span class="coche">✓</span> Mousse super luxe</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OPTIONS ===================== -->
+<section id="options" style="background:var(--gris-pale);">
+  <div class="contenu">
+    <div class="titre-section"><h2>Les options de lavage</h2><div class="ligne"></div></div>
+    <p class="sous-titre">Chaque forfait combine plusieurs de ces traitements pour un fini impeccable.</p>
+    <div class="options-grille">
+      <div class="opt"><div class="rond" style="background:#dff0ff;">🫧</div><h4>Savon pré-trempage</h4></div>
+      <div class="opt"><div class="rond" style="background:#d6ecfb;">💦</div><h4>Rinçage haute pression</h4></div>
+      <div class="opt"><div class="rond" style="background:#ffe6d6;">🌊</div><h4>Canon haute pression</h4></div>
+      <div class="opt"><div class="rond" style="background:#eef1f5;">🌬️</div><h4>Séchoir puissant</h4></div>
+      <div class="opt"><div class="rond" style="background:#dcf6e4;">✨</div><h4>Cire de protection</h4></div>
+      <div class="opt"><div class="rond" style="background:#f3ddf7;">🎨</div><h4>Savon mousse à couleurs</h4></div>
+      <div class="opt"><div class="rond" style="background:#fff0d0;">🌀</div><h4>Séchoir +</h4></div>
+      <div class="opt"><div class="rond" style="background:#d6ecfb;">🚿</div><h4>Jet d'eau</h4></div>
+      <div class="opt"><div class="rond" style="background:#dff0ff;">☔</div><h4>Protecteur Rain-X</h4></div>
+      <div class="opt"><div class="rond" style="background:#ffe2e0;">🛡️</div><h4>Lubrifiant antirouille</h4></div>
+      <div class="opt"><div class="rond" style="background:#e7e0fb;">💎</div><h4>Mousse super luxe</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIBRE-SERVICE ===================== -->
+<section id="libre-service" class="bande-bleue">
+  <div class="contenu">
+    <div class="titre-section"><h2>Libre-service</h2><div class="ligne"></div></div>
+    <p class="sous-titre">Tu préfères laver ton véhicule toi-même? Plusieurs postes sont à ta disposition, en tout temps.</p>
+    <div class="libre-grille">
+      <div class="libre-carte"><div class="emoji">🧽</div><h3>Postes de lavage</h3><p>Plusieurs postes pour laver soi-même son véhicule, à ton rythme.</p></div>
+      <div class="libre-carte"><div class="emoji">💧</div><h3>Tarif populaire</h3><div class="gros">4&nbsp;$ / 6&nbsp;min</div><p>L'option préférée de nos clients pour un lavage rapide.</p></div>
+      <div class="libre-carte"><div class="emoji">🚗💨</div><h3>Aspirateurs</h3><p>Aspirateurs puissants sur place pour un intérieur impeccable.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DÉTAILLAGE ===================== -->
+<section id="detaillage">
+  <div class="contenu">
+    <div class="titre-section"><h2>Détaillage automobile</h2><div class="ligne"></div></div>
+    <p class="sous-titre">Services complets, intérieur et extérieur, pour redonner une seconde vie à ton véhicule.</p>
+    <div class="detail-grille">
+      <div class="detail-item"><div class="ico">🧼</div><span>Detailing intérieur &amp; extérieur</span></div>
+      <div class="detail-item"><div class="ico">🧴</div><span>Nettoyage en profondeur, shampoing complet</span></div>
+      <div class="detail-item"><div class="ico">💺</div><span>Nettoyage des sièges, shampoing des tapis</span></div>
+      <div class="detail-item"><div class="ico">🪑</div><span>Nettoyage &amp; conditionnement du cuir</span></div>
+      <div class="detail-item"><div class="ico">🤲</div><span>Lavage extérieur à la main</span></div>
+      <div class="detail-item"><div class="ico">🛞</div><span>Nettoyage des jantes, brillance des pneus</span></div>
+      <div class="detail-item"><div class="ico">✨</div><span>Polissage, correction de peinture, rayures</span></div>
+      <div class="detail-item"><div class="ico">💎</div><span>Traitement céramique</span></div>
+      <div class="detail-item"><div class="ico">💡</div><span>Restauration des phares</span></div>
+      <div class="detail-item"><div class="ico">🌿</div><span>Élimination des odeurs</span></div>
+    </div>
+    <div class="detail-note">
+      <p>Les services de détaillage sont sur soumission — appelle-nous pour ton estimation gratuite.</p>
+      <a href="tel:+15146233766" class="btn btn-bleu">📞 Demander une soumission</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATION CHIEN ===================== -->
+<section>
+  <div class="contenu">
+    <div class="chien">
+      <div class="gros-emoji">🐕💦</div>
+      <h2>Station de lavage pour chien</h2>
+      <p>Eh oui! Ton meilleur ami a droit lui aussi à son bain. Une station dédiée pour laver ton chien facilement — pratique, propre, pis pas de dégât à la maison.</p>
+      <span class="etiquette">🐾 Unique chez Express.Net</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== POURQUOI NOUS ===================== -->
+<section id="pourquoi" style="background:var(--gris-pale);">
+  <div class="contenu">
+    <div class="titre-section"><h2>Pourquoi nous choisir</h2><div class="ligne"></div></div>
+    <div class="pourquoi-grille">
+      <div class="pourquoi-carte"><div class="rond-ico">🕐</div><h3>Ouvert 24h/24</h3><p>7 jours sur 7, jour et nuit. On ne dort jamais.</p></div>
+      <div class="pourquoi-carte"><div class="rond-ico">⭐</div><h3>4.6 sur Google</h3><div class="etoiles">★★★★★</div><p>725 avis de clients satisfaits.</p></div>
+      <div class="pourquoi-carte"><div class="rond-ico">🌀</div><h3>LaserWash 360°</h3><p>Équipement automatique haut de gamme, sans contact.</p></div>
+      <div class="pourquoi-carte"><div class="rond-ico">💳</div><h3>Paiement facile</h3><p>Visa, Mastercard, argent comptant &amp; monnaie.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALERIE ===================== -->
+<section id="galerie">
+  <div class="contenu">
+    <div class="titre-section"><h2>Galerie</h2><div class="ligne"></div></div>
+    <p class="sous-titre">Quelques images de nos installations et de chars qui brillent. (Photos à venir.)</p>
+    <div class="galerie-grille">
+      <div class="galerie-tuile"><div class="ico-cam">📷</div><span>Photo à venir</span></div>
+      <div class="galerie-tuile"><div class="ico-cam">📷</div><span>Photo à venir</span></div>
+      <div class="galerie-tuile"><div class="ico-cam">📷</div><span>Photo à venir</span></div>
+      <div class="galerie-tuile"><div class="ico-cam">📷</div><span>Photo à venir</span></div>
+      <div class="galerie-tuile"><div class="ico-cam">📷</div><span>Photo à venir</span></div>
+      <div class="galerie-tuile"><div class="ico-cam">📷</div><span>Photo à venir</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" style="background:var(--gris-pale);">
+  <div class="contenu">
+    <div class="titre-section"><h2>Nous trouver</h2><div class="ligne"></div></div>
+    <p class="sous-titre">On est ouvert en tout temps — passe quand ça te convient!</p>
+    <div class="contact-grille">
+      <div class="contact-infos">
+        <div class="info-ligne">
+          <div class="ico">📍</div>
+          <div><h4>Adresse</h4><p>11360 R. Sherbrooke E,<br>Montréal-Est, QC H1B 1B9</p></div>
+        </div>
+        <div class="info-ligne">
+          <div class="ico">📞</div>
+          <div><h4>Téléphone</h4><a href="tel:+15146233766">(514) 623-3766</a></div>
+        </div>
+        <div class="info-ligne">
+          <div class="ico">🕐</div>
+          <div><h4>Heures</h4><p>Ouvert 24h/24, 7 jours/7</p></div>
+        </div>
+        <div class="info-ligne">
+          <div class="ico">💳</div>
+          <div><h4>Paiement</h4><p>Visa · Mastercard · comptant · monnaie</p></div>
+        </div>
+        <div class="contact-boutons">
+          <a href="tel:+15146233766" class="btn btn-jaune">📞 Appeler</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=11360+Rue+Sherbrooke+Est,+Montr%C3%A9al-Est,+QC+H1B+1B9" target="_blank" rel="noopener" class="btn btn-bleu">📍 Itinéraire</a>
+        </div>
+      </div>
+      <div class="carte-maps">
+        <iframe
+          src="https://maps.google.com/maps?q=11360%20Rue%20Sherbrooke%20Est%2C%20Montr%C3%A9al-Est%2C%20QC%20H1B%201B9&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Carte — Lave-Auto Express.Net"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PIED DE PAGE ===================== -->
+<footer>
+  <div class="contenu">
+    <div class="logo"><span class="ex">Express</span><span class="net">.Net</span></div>
+    <div>
+      <a href="https://www.facebook.com/p/Lave-Auto-ExpressNet-100054612331796/" target="_blank" rel="noopener" class="reseau">📘 Suivez-nous sur Facebook</a>
+    </div>
+    <p class="adr">11360 R. Sherbrooke E, Montréal-Est, QC H1B 1B9 · (514) 623-3766</p>
+    <p class="adr">Toujours ouvert · 24h/24 · 7 jours/7</p>
+    <p class="droits">© 2026 Lave-Auto Express.Net. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Bouton d'appel flottant (mobile) -->
+<a href="tel:+15146233766" class="appel-flottant" aria-label="Appeler">📞</a>
+
+<script>
+  function basculerMenu(){document.getElementById('menu').classList.toggle('ouvert');}
+  function fermerMenu(){document.getElementById('menu').classList.remove('ouvert');}
+</script>
+
+</body>
+</html>
