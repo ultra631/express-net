@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lave-Auto Express.Net — Toujours ouvert 24h/24, 7j/7 | Montréal-Est</title>
-<meta name="description" content="Lave-Auto Express.Net à Montréal-Est. Lavage automatique LaserWash 360°, libre-service, détaillage et station pour chien. Ouvert 24h/24, 7 jours/7. 4.6★ (725 avis).">
+<meta name="description" content="Lave-Auto Express.Net à Montréal-Est. Lavage automatique LaserWash 360°, libre-service et station pour chien. Ouvert 24h/24, 7 jours/7. 4.6★ (725 avis).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,11 +16,11 @@
     --bleu-nuit:#06163d;
     --bleu-eau:#2bb0e8;
     --bleu-eau-clair:#e6f4fc;
+    --pale:#e3f0fb;
     --jaune:#fdb913;
     --jaune-fonce:#c98e00;
     --rouge:#e2231a;
     --blanc:#ffffff;
-    --gris-pale:#f4f7fb;
     --gris-texte:#5b6470;
     --noir:#13203a;
     --ombre:0 12px 34px rgba(18,58,140,0.14);
@@ -28,25 +28,29 @@
     --radius:20px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  html{background:linear-gradient(180deg,#ffffff 0%,#eaf4ff 55%,#e3f0fb 100%);}
-  body{font-family:'Poppins',sans-serif;color:var(--noir);background:transparent;line-height:1.6;overflow-x:hidden;}
-  #fond{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;}
-  #fond .lueur{position:absolute;border-radius:50%;filter:blur(70px);}
-  #fond .lueur.l1{width:460px;height:460px;background:rgba(43,176,232,0.34);top:-130px;right:-110px;}
-  #fond .lueur.l2{width:400px;height:400px;background:rgba(253,185,19,0.22);bottom:-130px;left:-100px;}
-  #fond .lueur.l3{width:360px;height:360px;background:rgba(43,176,232,0.22);top:46%;left:40%;}
-  #fond .b{position:absolute;bottom:-90px;border-radius:50%;background:radial-gradient(circle at 34% 30%,rgba(255,255,255,0.9),rgba(43,176,232,0.45));border:1px solid rgba(43,176,232,0.35);box-shadow:0 0 20px rgba(43,176,232,0.20);animation:flotter linear infinite;}
-  @keyframes flotter{0%{transform:translateY(0) scale(0.6);opacity:0;}12%{opacity:0.9;}100%{transform:translateY(-118vh) scale(1);opacity:0;}}
-  @media (prefers-reduced-motion:reduce){#fond .b{display:none;}}
+  html{scroll-behavior:smooth;background:#ffffff;}
+  body{font-family:'Poppins',sans-serif;color:var(--noir);background:#ffffff;line-height:1.6;overflow-x:hidden;}
   a{text-decoration:none;color:inherit;}
   img{max-width:100%;display:block;}
-  .contenu{width:100%;max-width:1140px;margin:0 auto;padding:0 20px;}
-  section{padding:72px 0;scroll-margin-top:80px;}
+  .contenu{width:100%;max-width:1140px;margin:0 auto;padding:0 20px;position:relative;z-index:2;}
+  section{position:relative;padding:84px 0 120px;scroll-margin-top:80px;}
   .titre-section{text-align:center;margin-bottom:14px;}
   .titre-section h2{font-size:clamp(27px,6vw,42px);font-weight:800;color:var(--bleu-royal);letter-spacing:-0.6px;}
   .titre-section .ligne{width:70px;height:5px;background:var(--jaune);border-radius:4px;margin:16px auto 0;}
   .sous-titre{text-align:center;color:var(--gris-texte);max-width:640px;margin:0 auto 42px;font-size:16px;}
+
+  /* ===== FONDS DE SECTION ===== */
+  .s-blanc{background:#ffffff;}
+  .s-pale{background:var(--pale);}
+  .s-sombre{background:linear-gradient(160deg,var(--bleu-royal),var(--bleu-nuit));color:#fff;}
+  .s-sombre .titre-section h2{color:#fff;}
+  .s-sombre .titre-section .ligne{background:var(--jaune);}
+  .s-sombre .sous-titre{color:#cfe3ff;}
+
+  /* ===== VAGUE ENTRE SECTIONS ===== */
+  .vague-bas{position:absolute;left:0;right:0;bottom:-1px;width:100%;line-height:0;z-index:1;pointer-events:none;}
+  .vague-bas svg{display:block;width:100%;height:70px;}
+  @media(max-width:820px){.vague-bas svg{height:44px;}}
 
   /* ===== ANIMATIONS APPARITION ===== */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
@@ -62,7 +66,7 @@
   .logo .net{background:linear-gradient(180deg,#7fd2f5 0%,#2bb0e8 55%,#1880c0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 
   /* ===== EN-TÊTE ===== */
-  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 18px rgba(18,58,140,0.10);}
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 18px rgba(18,58,140,0.10);}
   .barre{display:flex;align-items:center;justify-content:space-between;height:68px;}
   .nav-liens{display:flex;align-items:center;gap:26px;}
   .nav-liens a{font-weight:500;font-size:15px;color:var(--noir);transition:color .2s;position:relative;}
@@ -77,7 +81,7 @@
   .burger span{width:26px;height:3px;background:var(--bleu-royal);border-radius:3px;transition:.3s;}
 
   /* ===== HÉRO ===== */
-  .hero{position:relative;background:radial-gradient(120% 100% at 50% 0%,#1a4aa8 0%,var(--bleu-fonce) 55%,var(--bleu-nuit) 100%);color:#fff;text-align:center;padding:80px 0 110px;overflow:hidden;min-height:90vh;display:flex;flex-direction:column;justify-content:center;}
+  .hero{position:relative;background:radial-gradient(120% 100% at 50% 0%,#1a4aa8 0%,var(--bleu-fonce) 55%,var(--bleu-nuit) 100%);color:#fff;text-align:center;padding:80px 0 120px;overflow:hidden;min-height:90vh;display:flex;flex-direction:column;justify-content:center;}
   .bulle-anim{position:absolute;bottom:-40px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);animation:monter linear infinite;}
   @keyframes monter{
     0%{transform:translateY(0) scale(0.6);opacity:0;}
@@ -128,29 +132,14 @@
   .opt .rond{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:23px;margin:0 auto 12px;color:var(--bleu-royal);}
   .opt h4{font-size:15px;font-weight:600;color:var(--noir);}
 
-  /* ===== BANDES SOMBRES ===== */
-  .bande-bleue{background:linear-gradient(160deg,var(--bleu-royal),var(--bleu-nuit));color:#fff;position:relative;overflow:hidden;}
-  .bande-bleue h2{color:#fff;}
-  .bande-bleue .ligne{background:var(--jaune);}
-  .bande-bleue .sous-titre{color:#cfe3ff;}
-
   /* ===== LIBRE-SERVICE ===== */
-  .libre-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;position:relative;z-index:2;}
+  .libre-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
   .libre-carte{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-radius:var(--radius);padding:30px 22px;text-align:center;backdrop-filter:blur(4px);transition:transform .2s,background .2s;}
   .libre-carte:hover{transform:translateY(-6px);background:rgba(255,255,255,0.12);}
   .libre-carte .ico-haut{font-size:38px;margin-bottom:14px;color:var(--jaune);}
   .libre-carte h3{font-size:19px;font-weight:700;margin-bottom:8px;}
   .libre-carte .gros{font-size:32px;font-weight:800;color:var(--jaune);margin:6px 0;}
   .libre-carte p{color:#cfe3ff;font-size:15px;}
-
-  /* ===== DÉTAILLAGE ===== */
-  .detail-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(244px,1fr));gap:14px;}
-  .detail-item{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e7edf6;border-radius:16px;padding:17px 18px;box-shadow:0 4px 16px rgba(18,58,140,0.06);transition:transform .18s,box-shadow .18s;}
-  .detail-item:hover{transform:translateX(4px);box-shadow:var(--ombre);}
-  .detail-item .ico{flex-shrink:0;width:44px;height:44px;border-radius:13px;background:var(--bleu-eau-clair);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--bleu-royal);}
-  .detail-item span{font-size:15px;font-weight:500;color:#2a3550;}
-  .detail-note{text-align:center;margin-top:32px;}
-  .detail-note p{color:var(--gris-texte);margin-bottom:16px;font-size:15px;}
 
   /* ===== CHIEN ===== */
   .chien{background:linear-gradient(135deg,#2bb0e8,#1463a8);color:#fff;border-radius:26px;padding:50px 30px;text-align:center;position:relative;overflow:hidden;box-shadow:0 22px 48px rgba(20,99,168,0.34);}
@@ -161,7 +150,7 @@
 
   /* ===== POURQUOI NOUS ===== */
   .pourquoi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
-  .pourquoi-carte{text-align:center;background:#fff;border:1px solid #e7edf6;border-radius:var(--radius);padding:32px 22px;box-shadow:var(--ombre);transition:transform .2s;}
+  .pourquoi-carte{text-align:center;background:#fff;border:1px solid #e7edf6;border-radius:var(--radius);padding:32px 22px;box-shadow:0 14px 34px rgba(0,0,0,0.22);transition:transform .2s;}
   .pourquoi-carte:hover{transform:translateY(-6px);}
   .pourquoi-carte .rond-ico{width:66px;height:66px;border-radius:50%;background:var(--bleu-eau-clair);display:flex;align-items:center;justify-content:center;font-size:27px;margin:0 auto 14px;color:var(--bleu-eau);}
   .pourquoi-carte h3{font-size:18px;font-weight:700;color:var(--bleu-royal);margin-bottom:6px;}
@@ -188,7 +177,7 @@
   .contact-boutons{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;}
 
   /* ===== PIED DE PAGE ===== */
-  footer{background:linear-gradient(160deg,var(--bleu-fonce),var(--bleu-nuit));color:#cfe3ff;padding:52px 0 26px;text-align:center;}
+  footer{background:linear-gradient(160deg,var(--bleu-fonce),var(--bleu-nuit));color:#cfe3ff;padding:56px 0 26px;text-align:center;}
   footer .logo{font-size:36px;margin-bottom:16px;}
   .reseau{display:inline-flex;align-items:center;gap:10px;background:#1877f2;color:#fff;font-weight:600;padding:12px 24px;border-radius:50px;font-size:15px;margin-bottom:24px;transition:transform .15s;}
   .reseau:hover{transform:translateY(-3px);color:#fff;}
@@ -207,14 +196,12 @@
     .nav-liens .btn-tel-haut{margin:14px 20px;text-align:center;}
     .burger{display:flex;}
     .contact-grille{grid-template-columns:1fr;}
-    section{padding:54px 0;}
+    section{padding:56px 0 84px;}
     .appel-flottant{display:flex;}
   }
 </style>
 </head>
 <body>
-
-<div id="fond"><span class="lueur l1"></span><span class="lueur l2"></span><span class="lueur l3"></span></div>
 
 <!-- ===================== EN-TÊTE ===================== -->
 <header>
@@ -246,14 +233,14 @@
     </div>
   </div>
   <div class="vague">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:64px;display:block;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:70px;display:block;">
       <path fill="#ffffff" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path>
     </svg>
   </div>
 </section>
 
 <!-- ===================== FORFAITS ===================== -->
-<section id="forfaits">
+<section id="forfaits" class="s-blanc">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Nos forfaits de lavage</h2><div class="ligne"></div></div>
     <p class="sous-titre reveal">Lavage automatique LaserWash 360°. Choisis ton niveau de brillance — taxes incluses, aucune surprise.</p>
@@ -325,10 +312,11 @@
 
     </div>
   </div>
+  <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#e3f0fb" d="M0,46 C200,12 400,70 660,44 C920,18 1180,64 1440,38 L1440,80 L0,80 Z"></path></svg></div>
 </section>
 
 <!-- ===================== OPTIONS ===================== -->
-<section id="options" style="background:rgba(231,243,252,0.55);">
+<section id="options" class="s-pale">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Les options de lavage</h2><div class="ligne"></div></div>
     <p class="sous-titre reveal">Chaque forfait combine plusieurs de ces traitements pour un fini impeccable.</p>
@@ -346,10 +334,11 @@
       <div class="opt reveal"><div class="rond" style="background:#e7e0fb;"><i class="fa-solid fa-gem"></i></div><h4>Mousse super luxe</h4></div>
     </div>
   </div>
+  <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#123a8c" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path></svg></div>
 </section>
 
-<!-- ===================== LIBRE-SERVICE ===================== -->
-<section id="libre-service" class="bande-bleue">
+<!-- ===================== LIBRE-SERVICE (bande bleu nuit) ===================== -->
+<section id="libre-service" class="s-sombre">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Libre-service</h2><div class="ligne"></div></div>
     <p class="sous-titre reveal">Tu préfères laver ton véhicule toi-même? Plusieurs postes sont à ta disposition, en tout temps.</p>
@@ -359,10 +348,11 @@
       <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-wind"></i></div><h3>Aspirateurs</h3><p>Aspirateurs puissants sur place pour un intérieur impeccable.</p></div>
     </div>
   </div>
+  <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#ffffff" d="M0,46 C200,12 400,70 660,44 C920,18 1180,64 1440,38 L1440,80 L0,80 Z"></path></svg></div>
 </section>
 
 <!-- ===================== STATION CHIEN ===================== -->
-<section>
+<section class="s-blanc" id="chien">
   <div class="contenu">
     <div class="chien reveal">
       <div class="gros-ico"><i class="fa-solid fa-dog"></i></div>
@@ -371,10 +361,11 @@
       <span class="etiquette"><i class="fa-solid fa-paw"></i> Unique chez Express.Net</span>
     </div>
   </div>
+  <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#123a8c" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path></svg></div>
 </section>
 
-<!-- ===================== POURQUOI NOUS ===================== -->
-<section id="pourquoi" style="background:rgba(231,243,252,0.55);">
+<!-- ===================== POURQUOI NOUS (bande bleu nuit) ===================== -->
+<section id="pourquoi" class="s-sombre">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Pourquoi nous choisir</h2><div class="ligne"></div></div>
     <div class="pourquoi-grille">
@@ -384,10 +375,11 @@
       <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-credit-card"></i></div><h3>Paiement facile</h3><p>Visa, Mastercard, argent comptant &amp; monnaie.</p></div>
     </div>
   </div>
+  <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#ffffff" d="M0,46 C200,12 400,70 660,44 C920,18 1180,64 1440,38 L1440,80 L0,80 Z"></path></svg></div>
 </section>
 
 <!-- ===================== GALERIE ===================== -->
-<section id="galerie">
+<section id="galerie" class="s-blanc">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Galerie</h2><div class="ligne"></div></div>
     <p class="sous-titre reveal">Quelques images de nos installations et de chars qui brillent. (Photos à venir.)</p>
@@ -400,10 +392,11 @@
       <div class="galerie-tuile reveal"><div class="ico-cam"><i class="fa-solid fa-camera"></i></div><span>Photo à venir</span></div>
     </div>
   </div>
+  <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#e3f0fb" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path></svg></div>
 </section>
 
 <!-- ===================== CONTACT ===================== -->
-<section id="contact" style="background:rgba(231,243,252,0.55);">
+<section id="contact" class="s-pale">
   <div class="contenu">
     <div class="titre-section reveal"><h2>Nous trouver</h2><div class="ligne"></div></div>
     <p class="sous-titre reveal">On est ouvert en tout temps — passe quand ça te convient!</p>
@@ -438,6 +431,7 @@
       </div>
     </div>
   </div>
+  <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#0a225a" d="M0,46 C200,12 400,70 660,44 C920,18 1180,64 1440,38 L1440,80 L0,80 Z"></path></svg></div>
 </section>
 
 <!-- ===================== PIED DE PAGE ===================== -->
@@ -461,8 +455,7 @@
 
   /* Bulles d'eau animées dans le héro */
   (function(){
-    var prefereReduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(prefereReduit) return;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var zone = document.getElementById('bulles');
     if(!zone) return;
     for(var i=0;i<14;i++){
@@ -475,24 +468,6 @@
       b.style.animationDuration = (Math.random()*10+9).toFixed(1)+'s';
       b.style.animationDelay = (Math.random()*8).toFixed(1)+'s';
       zone.appendChild(b);
-    }
-  })();
-
-  /* Bulles d'ambiance sur tout le fond du site */
-  (function(){
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var fond = document.getElementById('fond');
-    if(!fond) return;
-    for(var i=0;i<26;i++){
-      var b = document.createElement('span');
-      b.className = 'b';
-      var t = Math.round(Math.random()*72+18);
-      b.style.width = t+'px';
-      b.style.height = t+'px';
-      b.style.left = Math.round(Math.random()*100)+'%';
-      b.style.animationDuration = (Math.random()*12+12).toFixed(1)+'s';
-      b.style.animationDelay = (Math.random()*14).toFixed(1)+'s';
-      fond.appendChild(b);
     }
   })();
 
