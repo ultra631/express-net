@@ -60,10 +60,6 @@
     .bulle-anim{display:none !important;}
   }
 
-  /* ===== LOGO TEXTE ===== */
-  .logo{font-weight:800;font-size:26px;letter-spacing:-0.5px;line-height:1;white-space:nowrap;}
-  .logo .ex{background:linear-gradient(180deg,#ffd24a 0%,#fdb913 45%,#f08a00 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-  .logo .net{background:linear-gradient(180deg,#7fd2f5 0%,#2bb0e8 55%,#1880c0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
   /* ===== LOGO IMAGE ===== */
   .logo-img{height:46px;width:auto;display:block;border-radius:10px;}
   .hero .logo-img{height:120px;margin:0 auto 18px;border-radius:18px;box-shadow:0 12px 34px rgba(0,0,0,0.35);}
@@ -72,8 +68,8 @@
 
   /* ===== EN-TÊTE ===== */
   header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 18px rgba(18,58,140,0.10);}
-  .barre{display:flex;align-items:center;justify-content:space-between;height:68px;}
-  .nav-liens{display:flex;align-items:center;gap:26px;}
+  .barre{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px;}
+  .nav-liens{display:flex;align-items:center;gap:24px;}
   .nav-liens a{font-weight:500;font-size:15px;color:var(--noir);transition:color .2s;position:relative;}
   .nav-liens a:not(.btn-tel-haut)::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--bleu-eau);transition:width .25s;}
   .nav-liens a:not(.btn-tel-haut):hover::after{width:100%;}
@@ -82,6 +78,8 @@
   .btn-tel-haut{background:var(--jaune);color:var(--noir);font-weight:600;padding:9px 18px;border-radius:50px;font-size:14px;white-space:nowrap;box-shadow:0 6px 16px rgba(253,185,19,0.45);transition:transform .15s;}
   .btn-tel-haut i{margin-left:0;margin-right:6px;color:var(--noir);font-size:14px;}
   .btn-tel-haut:hover{transform:translateY(-2px);color:var(--noir);}
+  .btn-langue{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--bleu-royal);border:1.5px solid var(--bleu-royal);font-family:inherit;font-weight:600;font-size:14px;padding:8px 14px;border-radius:50px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;}
+  .btn-langue:hover{background:var(--bleu-royal);color:#fff;}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
   .burger span{width:26px;height:3px;background:var(--bleu-royal);border-radius:3px;transition:.3s;}
 
@@ -94,7 +92,6 @@
     100%{transform:translateY(-110vh) scale(1);opacity:0;}
   }
   .hero-contenu{position:relative;z-index:3;}
-  .hero .logo{font-size:clamp(42px,12vw,78px);margin-bottom:8px;text-shadow:0 6px 24px rgba(0,0,0,0.25);}
   .hero .accroche{font-size:clamp(18px,4.5vw,25px);font-weight:500;color:#cfe3ff;margin-bottom:20px;}
   .badge-ouvert{display:inline-flex;align-items:center;gap:9px;background:var(--rouge);color:#fff;font-weight:600;font-size:clamp(14px,3.6vw,17px);padding:11px 24px;border-radius:50px;box-shadow:0 10px 26px rgba(226,35,26,0.45);margin-bottom:18px;}
   .point-vert{width:10px;height:10px;background:#46e36a;border-radius:50%;box-shadow:0 0 0 0 rgba(70,227,106,0.55);animation:pulse 2s infinite;}
@@ -193,7 +190,7 @@
 
   /* ===== PIED DE PAGE ===== */
   footer{background:linear-gradient(160deg,var(--bleu-fonce),var(--bleu-nuit));color:#cfe3ff;padding:56px 0 26px;text-align:center;}
-  footer .logo{font-size:36px;margin-bottom:16px;}
+  footer .logo-img{height:64px;}
   .reseau{display:inline-flex;align-items:center;gap:10px;background:#1877f2;color:#fff;font-weight:600;padding:12px 24px;border-radius:50px;font-size:15px;margin-bottom:24px;transition:transform .15s;}
   .reseau:hover{transform:translateY(-3px);color:#fff;}
   footer .adr{font-size:14px;color:#9fb8dd;margin-bottom:6px;}
@@ -205,7 +202,7 @@
   /* ===== RESPONSIVE ===== */
   @media (max-width:820px){
     .nav-liens{position:fixed;top:68px;left:0;width:100%;background:#fff;flex-direction:column;gap:0;padding:0;max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 14px 26px rgba(18,58,140,0.14);}
-    .nav-liens.ouvert{max-height:480px;}
+    .nav-liens.ouvert{max-height:520px;}
     .nav-liens a{width:100%;padding:15px 20px;border-bottom:1px solid #eef2f8;}
     .nav-liens a:not(.btn-tel-haut)::after{display:none;}
     .nav-liens .btn-tel-haut{margin:14px 20px;text-align:center;}
@@ -223,14 +220,15 @@
   <div class="contenu barre">
     <a href="#accueil" class="logo"><img src="preview%20(6).webp" alt="Lave-Auto Express.Net" class="logo-img"></a>
     <nav class="nav-liens" id="menu">
-      <a href="#forfaits" onclick="fermerMenu()">Forfaits</a>
-      <a href="#options" onclick="fermerMenu()">Options</a>
-      <a href="#libre-service" onclick="fermerMenu()">Libre-service</a>
-      <a href="#chien" onclick="fermerMenu()">Chien <i class="fa-solid fa-dog"></i></a>
-      <a href="#avis" onclick="fermerMenu()">Avis</a>
-      <a href="#contact" onclick="fermerMenu()">Contact</a>
+      <a href="#forfaits" onclick="fermerMenu()" class="i18n" data-fr="Forfaits" data-en="Packages">Forfaits</a>
+      <a href="#options" onclick="fermerMenu()" class="i18n" data-fr="Options" data-en="Options">Options</a>
+      <a href="#libre-service" onclick="fermerMenu()" class="i18n" data-fr="Libre-service" data-en="Self-service">Libre-service</a>
+      <a href="#chien" onclick="fermerMenu()"><span class="i18n" data-fr="Chien" data-en="Dog">Chien</span> <i class="fa-solid fa-dog"></i></a>
+      <a href="#avis" onclick="fermerMenu()" class="i18n" data-fr="Avis" data-en="Reviews">Avis</a>
+      <a href="#contact" onclick="fermerMenu()" class="i18n" data-fr="Contact" data-en="Contact">Contact</a>
       <a href="tel:+15146233766" class="btn-tel-haut"><i class="fa-solid fa-phone"></i>(514) 623-3766</a>
     </nav>
+    <button id="btn-langue" class="btn-langue" onclick="basculerLangue()"><i class="fa-solid fa-globe"></i><span id="langue-label">EN</span></button>
     <button class="burger" onclick="basculerMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -240,12 +238,12 @@
   <div id="bulles"></div>
   <div class="contenu hero-contenu">
     <img src="preview%20(6).webp" alt="Lave-Auto Express.Net" class="logo-img">
-    <p class="accroche">Votre véhicule mérite de briller.</p>
-    <div class="badge-ouvert"><span class="point-vert"></span> Toujours ouvert · 24h/24 · 7 jours/7</div>
-    <div class="hero-confiance"><span class="etoiles">★★★★★</span> 4.6 sur Google · 725 avis</div>
+    <p class="accroche i18n" data-fr="Votre véhicule mérite de briller." data-en="Your vehicle deserves to shine.">Votre véhicule mérite de briller.</p>
+    <div class="badge-ouvert"><span class="point-vert"></span> <span class="i18n" data-fr="Toujours ouvert · 24h/24 · 7 jours/7" data-en="Always open · 24/7">Toujours ouvert · 24h/24 · 7 jours/7</span></div>
+    <div class="hero-confiance"><span class="etoiles">★★★★★</span> <span class="i18n" data-fr="4.6 sur Google · 725 avis" data-en="4.6 on Google · 725 reviews">4.6 sur Google · 725 avis</span></div>
     <div class="hero-boutons">
-      <a href="tel:+15146233766" class="btn btn-jaune"><i class="fa-solid fa-phone"></i> Appeler</a>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=11360+Rue+Sherbrooke+Est,+Montr%C3%A9al-Est,+QC+H1B+1B9" target="_blank" rel="noopener" class="btn btn-bordure"><i class="fa-solid fa-location-dot"></i> Itinéraire</a>
+      <a href="tel:+15146233766" class="btn btn-jaune"><i class="fa-solid fa-phone"></i> <span class="i18n" data-fr="Appeler" data-en="Call">Appeler</span></a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=11360+Rue+Sherbrooke+Est,+Montr%C3%A9al-Est,+QC+H1B+1B9" target="_blank" rel="noopener" class="btn btn-bordure"><i class="fa-solid fa-location-dot"></i> <span class="i18n" data-fr="Itinéraire" data-en="Directions">Itinéraire</span></a>
     </div>
   </div>
   <div class="vague">
@@ -258,71 +256,71 @@
 <!-- ===================== FORFAITS ===================== -->
 <section id="forfaits" class="s-blanc">
   <div class="contenu">
-    <div class="titre-section reveal"><h2>Nos forfaits de lavage</h2><div class="ligne"></div></div>
-    <p class="sous-titre reveal">Lavage automatique LaserWash 360°. Choisis ton niveau de brillance — taxes incluses, aucune surprise.</p>
+    <div class="titre-section reveal"><h2 class="i18n" data-fr="Nos forfaits de lavage" data-en="Our wash packages">Nos forfaits de lavage</h2><div class="ligne"></div></div>
+    <p class="sous-titre reveal i18n" data-fr="Lavage automatique LaserWash 360°. Choisis ton niveau de brillance — taxes incluses, aucune surprise." data-en="LaserWash 360° automatic wash. Choose your level of shine — taxes included, no surprises.">Lavage automatique LaserWash 360°. Choisis ton niveau de brillance — taxes incluses, aucune surprise.</p>
     <div class="forfaits-grille">
 
       <div class="carte-forfait reveal">
-        <div class="nom-forfait">Classique</div>
+        <div class="nom-forfait i18n" data-fr="Classique" data-en="Classic">Classique</div>
         <div class="prix"><span>$</span>7</div>
-        <div class="taxes">taxes incluses</div>
+        <div class="taxes i18n" data-fr="taxes incluses" data-en="taxes included">taxes incluses</div>
         <ul class="liste-inclus">
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Savon pré-trempage</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Rinçage haute pression</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Canon haute pression</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Séchoir puissant</li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Savon pré-trempage" data-en="Pre-soak soap">Savon pré-trempage</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Rinçage haute pression" data-en="High-pressure rinse">Rinçage haute pression</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Canon haute pression" data-en="High-pressure cannon">Canon haute pression</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Séchoir puissant" data-en="Powerful dryer">Séchoir puissant</span></li>
         </ul>
       </div>
 
       <div class="carte-forfait reveal">
-        <div class="nom-forfait">Suprême</div>
+        <div class="nom-forfait i18n" data-fr="Suprême" data-en="Supreme">Suprême</div>
         <div class="prix"><span>$</span>9</div>
-        <div class="taxes">taxes incluses</div>
+        <div class="taxes i18n" data-fr="taxes incluses" data-en="taxes included">taxes incluses</div>
         <ul class="liste-inclus">
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Savon pré-trempage</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Rinçage haute pression</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Canon haute pression</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Séchoir puissant</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Cire de protection</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Savon mousse à couleurs</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Séchoir +</li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Savon pré-trempage" data-en="Pre-soak soap">Savon pré-trempage</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Rinçage haute pression" data-en="High-pressure rinse">Rinçage haute pression</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Canon haute pression" data-en="High-pressure cannon">Canon haute pression</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Séchoir puissant" data-en="Powerful dryer">Séchoir puissant</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Cire de protection" data-en="Protective wax">Cire de protection</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Savon mousse à couleurs" data-en="Colored foam soap">Savon mousse à couleurs</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Séchoir +" data-en="Dryer +">Séchoir +</span></li>
         </ul>
       </div>
 
       <div class="carte-forfait reveal">
-        <div class="nom-forfait">Royal</div>
+        <div class="nom-forfait i18n" data-fr="Royal" data-en="Royal">Royal</div>
         <div class="prix"><span>$</span>11</div>
-        <div class="taxes">taxes incluses</div>
+        <div class="taxes i18n" data-fr="taxes incluses" data-en="taxes included">taxes incluses</div>
         <ul class="liste-inclus">
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Savon pré-trempage</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Rinçage haute pression</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Canon haute pression</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Séchoir puissant</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Cire de protection</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Savon mousse à couleurs</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Séchoir +</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Jet d'eau</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Protecteur Rain-X</li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Savon pré-trempage" data-en="Pre-soak soap">Savon pré-trempage</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Rinçage haute pression" data-en="High-pressure rinse">Rinçage haute pression</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Canon haute pression" data-en="High-pressure cannon">Canon haute pression</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Séchoir puissant" data-en="Powerful dryer">Séchoir puissant</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Cire de protection" data-en="Protective wax">Cire de protection</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Savon mousse à couleurs" data-en="Colored foam soap">Savon mousse à couleurs</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Séchoir +" data-en="Dryer +">Séchoir +</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Jet d'eau" data-en="Water jet">Jet d'eau</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Protecteur Rain-X" data-en="Rain-X protectant">Protecteur Rain-X</span></li>
         </ul>
       </div>
 
       <div class="carte-forfait vedette reveal">
-        <div class="ruban"><i class="fa-solid fa-star"></i> Le plus populaire</div>
+        <div class="ruban"><i class="fa-solid fa-star"></i> <span class="i18n" data-fr="Le plus populaire" data-en="Most popular">Le plus populaire</span></div>
         <div class="nom-forfait or">Express.Net</div>
         <div class="prix"><span>$</span>13</div>
-        <div class="taxes">taxes incluses · le plus complet</div>
+        <div class="taxes i18n" data-fr="taxes incluses · le plus complet" data-en="taxes included · the most complete">taxes incluses · le plus complet</div>
         <ul class="liste-inclus">
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Savon pré-trempage</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Rinçage haute pression</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Canon haute pression</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Séchoir puissant</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Cire de protection</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Savon mousse à couleurs</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Séchoir +</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Jet d'eau</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Protecteur Rain-X</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Lubrifiant antirouille</li>
-          <li><span class="coche"><i class="fa-solid fa-check"></i></span> Mousse super luxe</li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Savon pré-trempage" data-en="Pre-soak soap">Savon pré-trempage</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Rinçage haute pression" data-en="High-pressure rinse">Rinçage haute pression</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Canon haute pression" data-en="High-pressure cannon">Canon haute pression</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Séchoir puissant" data-en="Powerful dryer">Séchoir puissant</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Cire de protection" data-en="Protective wax">Cire de protection</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Savon mousse à couleurs" data-en="Colored foam soap">Savon mousse à couleurs</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Séchoir +" data-en="Dryer +">Séchoir +</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Jet d'eau" data-en="Water jet">Jet d'eau</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Protecteur Rain-X" data-en="Rain-X protectant">Protecteur Rain-X</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Lubrifiant antirouille" data-en="Anti-rust lubricant">Lubrifiant antirouille</span></li>
+          <li><span class="coche"><i class="fa-solid fa-check"></i></span> <span class="i18n" data-fr="Mousse super luxe" data-en="Super luxe foam">Mousse super luxe</span></li>
         </ul>
       </div>
 
@@ -334,34 +332,34 @@
 <!-- ===================== OPTIONS ===================== -->
 <section id="options" class="s-pale">
   <div class="contenu">
-    <div class="titre-section reveal"><h2>Les options de lavage</h2><div class="ligne"></div></div>
-    <p class="sous-titre reveal">Chaque forfait combine plusieurs de ces traitements pour un fini impeccable.</p>
+    <div class="titre-section reveal"><h2 class="i18n" data-fr="Les options de lavage" data-en="Wash options">Les options de lavage</h2><div class="ligne"></div></div>
+    <p class="sous-titre reveal i18n" data-fr="Chaque forfait combine plusieurs de ces traitements pour un fini impeccable." data-en="Each package combines several of these treatments for a flawless finish.">Chaque forfait combine plusieurs de ces traitements pour un fini impeccable.</p>
     <div class="options-grille">
-      <div class="opt reveal"><div class="rond" style="background:#dff0ff;"><i class="fa-solid fa-soap"></i></div><h4>Savon pré-trempage</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#d6ecfb;"><i class="fa-solid fa-shower"></i></div><h4>Rinçage haute pression</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#ffe6d6;"><i class="fa-solid fa-spray-can-sparkles"></i></div><h4>Canon haute pression</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#eef1f5;"><i class="fa-solid fa-wind"></i></div><h4>Séchoir puissant</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#dcf6e4;"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h4>Cire de protection</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#f3ddf7;"><i class="fa-solid fa-palette"></i></div><h4>Savon mousse à couleurs</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#fff0d0;"><i class="fa-solid fa-fan"></i></div><h4>Séchoir +</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#d6ecfb;"><i class="fa-solid fa-droplet"></i></div><h4>Jet d'eau</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#dff0ff;"><i class="fa-solid fa-umbrella"></i></div><h4>Protecteur Rain-X</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#ffe2e0;"><i class="fa-solid fa-shield-halved"></i></div><h4>Lubrifiant antirouille</h4></div>
-      <div class="opt reveal"><div class="rond" style="background:#e7e0fb;"><i class="fa-solid fa-gem"></i></div><h4>Mousse super luxe</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#dff0ff;"><i class="fa-solid fa-soap"></i></div><h4 class="i18n" data-fr="Savon pré-trempage" data-en="Pre-soak soap">Savon pré-trempage</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#d6ecfb;"><i class="fa-solid fa-shower"></i></div><h4 class="i18n" data-fr="Rinçage haute pression" data-en="High-pressure rinse">Rinçage haute pression</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#ffe6d6;"><i class="fa-solid fa-spray-can-sparkles"></i></div><h4 class="i18n" data-fr="Canon haute pression" data-en="High-pressure cannon">Canon haute pression</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#eef1f5;"><i class="fa-solid fa-wind"></i></div><h4 class="i18n" data-fr="Séchoir puissant" data-en="Powerful dryer">Séchoir puissant</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#dcf6e4;"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h4 class="i18n" data-fr="Cire de protection" data-en="Protective wax">Cire de protection</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#f3ddf7;"><i class="fa-solid fa-palette"></i></div><h4 class="i18n" data-fr="Savon mousse à couleurs" data-en="Colored foam soap">Savon mousse à couleurs</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#fff0d0;"><i class="fa-solid fa-fan"></i></div><h4 class="i18n" data-fr="Séchoir +" data-en="Dryer +">Séchoir +</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#d6ecfb;"><i class="fa-solid fa-droplet"></i></div><h4 class="i18n" data-fr="Jet d'eau" data-en="Water jet">Jet d'eau</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#dff0ff;"><i class="fa-solid fa-umbrella"></i></div><h4 class="i18n" data-fr="Protecteur Rain-X" data-en="Rain-X protectant">Protecteur Rain-X</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#ffe2e0;"><i class="fa-solid fa-shield-halved"></i></div><h4 class="i18n" data-fr="Lubrifiant antirouille" data-en="Anti-rust lubricant">Lubrifiant antirouille</h4></div>
+      <div class="opt reveal"><div class="rond" style="background:#e7e0fb;"><i class="fa-solid fa-gem"></i></div><h4 class="i18n" data-fr="Mousse super luxe" data-en="Super luxe foam">Mousse super luxe</h4></div>
     </div>
   </div>
   <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#123a8c" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path></svg></div>
 </section>
 
-<!-- ===================== LIBRE-SERVICE (bande bleu nuit) ===================== -->
+<!-- ===================== LIBRE-SERVICE ===================== -->
 <section id="libre-service" class="s-sombre">
   <div class="contenu">
-    <div class="titre-section reveal"><h2>Libre-service</h2><div class="ligne"></div></div>
-    <p class="sous-titre reveal">Tu préfères laver ton véhicule toi-même? Plusieurs postes sont à ta disposition, en tout temps.</p>
+    <div class="titre-section reveal"><h2 class="i18n" data-fr="Libre-service" data-en="Self-service">Libre-service</h2><div class="ligne"></div></div>
+    <p class="sous-titre reveal i18n" data-fr="Tu préfères laver ton véhicule toi-même? Plusieurs postes sont à ta disposition, en tout temps." data-en="Prefer to wash your vehicle yourself? Several bays are available, any time.">Tu préfères laver ton véhicule toi-même? Plusieurs postes sont à ta disposition, en tout temps.</p>
     <div class="libre-grille">
-      <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-spray-can"></i></div><h3>Postes de lavage</h3><p>Plusieurs postes pour laver soi-même son véhicule, à ton rythme.</p></div>
-      <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-stopwatch"></i></div><h3>Tarif simple</h3><div class="gros">4&nbsp;$ / 6&nbsp;min</div><p>Paie pour le temps dont t'as besoin. Rapide et économique.</p></div>
-      <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-wind"></i></div><h3>Aspirateurs</h3><p>Aspirateurs puissants sur place pour un intérieur impeccable.</p></div>
+      <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-spray-can"></i></div><h3 class="i18n" data-fr="Postes de lavage" data-en="Wash bays">Postes de lavage</h3><p class="i18n" data-fr="Plusieurs postes pour laver soi-même son véhicule, à ton rythme." data-en="Several bays to wash your vehicle yourself, at your own pace.">Plusieurs postes pour laver soi-même son véhicule, à ton rythme.</p></div>
+      <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-stopwatch"></i></div><h3 class="i18n" data-fr="Tarif simple" data-en="Simple rate">Tarif simple</h3><div class="gros">4&nbsp;$ / 6&nbsp;min</div><p class="i18n" data-fr="Paie pour le temps dont t'as besoin. Rapide et économique." data-en="Pay for the time you need. Fast and affordable.">Paie pour le temps dont t'as besoin. Rapide et économique.</p></div>
+      <div class="libre-carte reveal"><div class="ico-haut"><i class="fa-solid fa-wind"></i></div><h3 class="i18n" data-fr="Aspirateurs" data-en="Vacuums">Aspirateurs</h3><p class="i18n" data-fr="Aspirateurs puissants sur place pour un intérieur impeccable." data-en="Powerful vacuums on site for a spotless interior.">Aspirateurs puissants sur place pour un intérieur impeccable.</p></div>
     </div>
   </div>
   <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#ffffff" d="M0,46 C200,12 400,70 660,44 C920,18 1180,64 1440,38 L1440,80 L0,80 Z"></path></svg></div>
@@ -372,25 +370,25 @@
   <div class="contenu">
     <div class="chien reveal">
       <div class="gros-ico"><i class="fa-solid fa-dog"></i></div>
-      <h2>Station de lavage pour chien</h2>
-      <p>Eh oui! Ton meilleur ami a droit lui aussi à son bain. Une station dédiée pour laver ton chien facilement — pratique, propre, pis pas de dégât à la maison.</p>
-      <span class="etiquette"><i class="fa-solid fa-paw"></i> Unique chez Express.Net</span>
+      <h2 class="i18n" data-fr="Station de lavage pour chien" data-en="Dog wash station">Station de lavage pour chien</h2>
+      <p class="i18n" data-fr="Eh oui! Ton meilleur ami a droit lui aussi à son bain. Une station dédiée pour laver ton chien facilement — pratique, propre, pis pas de dégât à la maison." data-en="That's right! Your best friend gets a bath too. A dedicated station to wash your dog easily — convenient, clean, and no mess at home.">Eh oui! Ton meilleur ami a droit lui aussi à son bain. Une station dédiée pour laver ton chien facilement — pratique, propre, pis pas de dégât à la maison.</p>
+      <span class="etiquette"><i class="fa-solid fa-paw"></i> <span class="i18n" data-fr="Unique chez Express.Net" data-en="Only at Express.Net">Unique chez Express.Net</span></span>
     </div>
   </div>
   <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#123a8c" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path></svg></div>
 </section>
 
-<!-- ===================== POURQUOI NOUS (bande bleu nuit) ===================== -->
+<!-- ===================== POURQUOI NOUS ===================== -->
 <section id="pourquoi" class="s-sombre">
   <div class="contenu">
-    <div class="titre-section reveal"><h2>Pourquoi nous choisir</h2><div class="ligne"></div></div>
+    <div class="titre-section reveal"><h2 class="i18n" data-fr="Pourquoi nous choisir" data-en="Why choose us">Pourquoi nous choisir</h2><div class="ligne"></div></div>
     <div class="pourquoi-grille">
-      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-clock"></i></div><h3>Ouvert 24h/24</h3><p>7 jours sur 7, jour et nuit. On ne dort jamais.</p></div>
-      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-star"></i></div><h3>4.6 sur Google</h3><div class="etoiles">★★★★★</div><p>725 avis de clients satisfaits.</p></div>
-      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-arrows-spin"></i></div><h3>LaserWash 360°</h3><p>Équipement automatique haut de gamme, sans contact.</p></div>
-      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-credit-card"></i></div><h3>Paiement facile</h3><p>Visa, Mastercard, argent comptant &amp; monnaie.</p></div>
-      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-bolt"></i></div><h3>Lavage rapide</h3><p>Ton véhicule propre en quelques minutes — pis t'es reparti.</p></div>
-      <div class="pourquoi-carte reveal"><div class="rond-ico" style="background:#e2f3e6;color:#2e9e5b;"><i class="fa-solid fa-leaf"></i></div><h3>Écoresponsable</h3><p>Produits écologiques, doux pour ton véhicule et la planète.</p></div>
+      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-clock"></i></div><h3 class="i18n" data-fr="Ouvert 24h/24" data-en="Open 24/7">Ouvert 24h/24</h3><p class="i18n" data-fr="7 jours sur 7, jour et nuit. On ne dort jamais." data-en="7 days a week, day and night. We never sleep.">7 jours sur 7, jour et nuit. On ne dort jamais.</p></div>
+      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-star"></i></div><h3 class="i18n" data-fr="4.6 sur Google" data-en="4.6 on Google">4.6 sur Google</h3><div class="etoiles">★★★★★</div><p class="i18n" data-fr="725 avis de clients satisfaits." data-en="725 reviews from happy customers.">725 avis de clients satisfaits.</p></div>
+      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-arrows-spin"></i></div><h3>LaserWash 360°</h3><p class="i18n" data-fr="Équipement automatique haut de gamme, sans contact." data-en="High-end touchless automatic equipment.">Équipement automatique haut de gamme, sans contact.</p></div>
+      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-credit-card"></i></div><h3 class="i18n" data-fr="Paiement facile" data-en="Easy payment">Paiement facile</h3><p class="i18n" data-fr="Visa, Mastercard, argent comptant et monnaie." data-en="Visa, Mastercard, cash and coins.">Visa, Mastercard, argent comptant et monnaie.</p></div>
+      <div class="pourquoi-carte reveal"><div class="rond-ico"><i class="fa-solid fa-bolt"></i></div><h3 class="i18n" data-fr="Lavage rapide" data-en="Fast wash">Lavage rapide</h3><p class="i18n" data-fr="Ton véhicule propre en quelques minutes — pis t'es reparti." data-en="Your vehicle clean in minutes — and you're off.">Ton véhicule propre en quelques minutes — pis t'es reparti.</p></div>
+      <div class="pourquoi-carte reveal"><div class="rond-ico" style="background:#e2f3e6;color:#2e9e5b;"><i class="fa-solid fa-leaf"></i></div><h3 class="i18n" data-fr="Écoresponsable" data-en="Eco-friendly">Écoresponsable</h3><p class="i18n" data-fr="Produits écologiques, doux pour ton véhicule et la planète." data-en="Eco-friendly products, gentle on your vehicle and the planet.">Produits écologiques, doux pour ton véhicule et la planète.</p></div>
     </div>
   </div>
   <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#e3f0fb" d="M0,46 C200,12 400,70 660,44 C920,18 1180,64 1440,38 L1440,80 L0,80 Z"></path></svg></div>
@@ -399,31 +397,31 @@
 <!-- ===================== AVIS / TÉMOIGNAGES ===================== -->
 <section id="avis" class="s-pale">
   <div class="contenu">
-    <div class="titre-section reveal"><h2>Ce que nos clients disent</h2><div class="ligne"></div></div>
-    <p class="sous-titre reveal">4.6 ★ sur Google · 725 avis. Voici un aperçu — pis t'es bienvenu d'en laisser un!</p>
+    <div class="titre-section reveal"><h2 class="i18n" data-fr="Ce que nos clients disent" data-en="What our customers say">Ce que nos clients disent</h2><div class="ligne"></div></div>
+    <p class="sous-titre reveal i18n" data-fr="4.6 ★ sur Google · 725 avis. Voici un aperçu — pis t'es bienvenu d'en laisser un!" data-en="4.6 ★ on Google · 725 reviews. Here's a glimpse — feel free to leave one!">4.6 ★ sur Google · 725 avis. Voici un aperçu — pis t'es bienvenu d'en laisser un!</p>
     <div class="avis-grille">
       <div class="avis-carte reveal">
         <i class="fa-solid fa-quote-left quote"></i>
         <div class="avis-etoiles">★★★★★</div>
-        <p>J'adore ce lave-auto! Facile à utiliser, bien entretenu, et surtout super propre — autant les installations que le résultat final. Spacieux pour circuler autour de la voiture. Lave-auto automatique ET lave-chien disponibles en plus!</p>
+        <p class="i18n" data-fr="J'adore ce lave-auto! Facile à utiliser, bien entretenu, et surtout super propre — autant les installations que le résultat final. Spacieux pour circuler autour de la voiture. Lave-auto automatique ET lave-chien disponibles en plus!" data-en="I love this car wash! Easy to use, well maintained, and above all super clean — both the facilities and the final result. Spacious to move around the car. Automatic car wash AND dog wash also available!">J'adore ce lave-auto! Facile à utiliser, bien entretenu, et surtout super propre — autant les installations que le résultat final. Spacieux pour circuler autour de la voiture. Lave-auto automatique ET lave-chien disponibles en plus!</p>
         <div class="avis-nom"><i class="fa-brands fa-google"></i> Véronique Steve · Local Guide Google</div>
       </div>
       <div class="avis-carte reveal">
         <i class="fa-solid fa-quote-left quote"></i>
         <div class="avis-etoiles">★★★★★</div>
-        <p>Toujours excellent! Toujours ouvert! C'est super facile de payer et très rapide! Merci beaucoup!</p>
+        <p class="i18n" data-fr="Toujours excellent! Toujours ouvert! C'est super facile de payer et très rapide! Merci beaucoup!" data-en="Always excellent! Always open! Super easy to pay and very fast! Thank you so much!">Toujours excellent! Toujours ouvert! C'est super facile de payer et très rapide! Merci beaucoup!</p>
         <div class="avis-nom"><i class="fa-brands fa-google"></i> AfterMath (JF Faucher) · Local Guide Google</div>
       </div>
       <div class="avis-carte reveal">
         <i class="fa-solid fa-quote-left quote"></i>
         <div class="avis-etoiles">★★★★★</div>
-        <p>6 baies de lavage manuel et 2 automatiques. Bien tenu, avec machine à monnaie en avant. Prend aussi les cartes de crédit directement à chaque baie de lavage.</p>
+        <p class="i18n" data-fr="6 baies de lavage manuel et 2 automatiques. Bien tenu, avec machine à monnaie en avant. Prend aussi les cartes de crédit directement à chaque baie de lavage." data-en="6 manual wash bays and 2 automatic. Well kept, with a coin machine up front. Also takes credit cards directly at each wash bay.">6 baies de lavage manuel et 2 automatiques. Bien tenu, avec machine à monnaie en avant. Prend aussi les cartes de crédit directement à chaque baie de lavage.</p>
         <div class="avis-nom"><i class="fa-brands fa-google"></i> Rick Foucher · Local Guide Google</div>
       </div>
     </div>
     <div class="avis-boutons reveal">
-      <a href="https://www.google.com/maps/place/?q=place_id:ChIJ74HZuRriyEwRxdzyHbQSvOg" target="_blank" rel="noopener" class="btn btn-bleu"><i class="fa-brands fa-google"></i> Voir nos avis Google</a>
-      <a href="https://search.google.com/local/writereview?placeid=ChIJ74HZuRriyEwRxdzyHbQSvOg" target="_blank" rel="noopener" class="btn btn-jaune"><i class="fa-solid fa-star"></i> Laisser un avis</a>
+      <a href="https://www.google.com/maps/place/?q=place_id:ChIJ74HZuRriyEwRxdzyHbQSvOg" target="_blank" rel="noopener" class="btn btn-bleu"><i class="fa-brands fa-google"></i> <span class="i18n" data-fr="Voir nos avis Google" data-en="See our Google reviews">Voir nos avis Google</span></a>
+      <a href="https://search.google.com/local/writereview?placeid=ChIJ74HZuRriyEwRxdzyHbQSvOg" target="_blank" rel="noopener" class="btn btn-jaune"><i class="fa-solid fa-star"></i> <span class="i18n" data-fr="Laisser un avis" data-en="Leave a review">Laisser un avis</span></a>
     </div>
   </div>
   <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#ffffff" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path></svg></div>
@@ -432,13 +430,13 @@
 <!-- ===================== GALERIE ===================== -->
 <section id="galerie" class="s-blanc">
   <div class="contenu">
-    <div class="titre-section reveal"><h2>Galerie</h2><div class="ligne"></div></div>
-    <p class="sous-titre reveal">Quelques images de nos installations et de véhicules qui brillent.</p>
+    <div class="titre-section reveal"><h2 class="i18n" data-fr="Galerie" data-en="Gallery">Galerie</h2><div class="ligne"></div></div>
+    <p class="sous-titre reveal i18n" data-fr="Quelques images de nos installations et de véhicules qui brillent." data-en="A few images of our facilities and vehicles that shine.">Quelques images de nos installations et de véhicules qui brillent.</p>
     <div class="galerie-grille">
-      <a class="galerie-tuile reveal" href="preview%20(5).webp" target="_blank" rel="noopener"><img src="preview%20(5).webp" alt="Lave-Auto Express.Net, bâtiment de jour" loading="lazy"><span class="galerie-cap">Nos installations le jour</span></a>
-      <a class="galerie-tuile reveal" href="preview%20(4).webp" target="_blank" rel="noopener"><img src="preview%20(4).webp" alt="Lave-Auto Express.Net la nuit" loading="lazy"><span class="galerie-cap">Ouvert même la nuit</span></a>
-      <a class="galerie-tuile reveal" href="preview%20(3).webp" target="_blank" rel="noopener"><img src="preview%20(3).webp" alt="Borne de paiement libre-service" loading="lazy"><span class="galerie-cap">Borne libre-service</span></a>
-      <a class="galerie-tuile reveal" href="preview%20(2).webp" target="_blank" rel="noopener"><img src="preview%20(2).webp" alt="Panneau des forfaits Express.Net" loading="lazy"><span class="galerie-cap">Nos forfaits affichés</span></a>
+      <a class="galerie-tuile reveal" href="preview%20(5).webp" target="_blank" rel="noopener"><img src="preview%20(5).webp" alt="Lave-Auto Express.Net" loading="lazy"><span class="galerie-cap i18n" data-fr="Nos installations le jour" data-en="Our facilities by day">Nos installations le jour</span></a>
+      <a class="galerie-tuile reveal" href="preview%20(4).webp" target="_blank" rel="noopener"><img src="preview%20(4).webp" alt="Lave-Auto Express.Net" loading="lazy"><span class="galerie-cap i18n" data-fr="Ouvert même la nuit" data-en="Open even at night">Ouvert même la nuit</span></a>
+      <a class="galerie-tuile reveal" href="preview%20(3).webp" target="_blank" rel="noopener"><img src="preview%20(3).webp" alt="Borne libre-service" loading="lazy"><span class="galerie-cap i18n" data-fr="Borne libre-service" data-en="Self-service kiosk">Borne libre-service</span></a>
+      <a class="galerie-tuile reveal" href="preview%20(2).webp" target="_blank" rel="noopener"><img src="preview%20(2).webp" alt="Panneau des forfaits" loading="lazy"><span class="galerie-cap i18n" data-fr="Nos forfaits affichés" data-en="Our packages displayed">Nos forfaits affichés</span></a>
     </div>
   </div>
   <div class="vague-bas"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#e3f0fb" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path></svg></div>
@@ -447,29 +445,29 @@
 <!-- ===================== CONTACT ===================== -->
 <section id="contact" class="s-pale">
   <div class="contenu">
-    <div class="titre-section reveal"><h2>Nous trouver</h2><div class="ligne"></div></div>
-    <p class="sous-titre reveal">On est ouvert en tout temps — passe quand ça te convient!</p>
+    <div class="titre-section reveal"><h2 class="i18n" data-fr="Nous trouver" data-en="Find us">Nous trouver</h2><div class="ligne"></div></div>
+    <p class="sous-titre reveal i18n" data-fr="On est ouvert en tout temps — passe quand ça te convient!" data-en="We're open anytime — come by whenever suits you!">On est ouvert en tout temps — passe quand ça te convient!</p>
     <div class="contact-grille">
       <div class="contact-infos reveal">
         <div class="info-ligne">
           <div class="ico"><i class="fa-solid fa-location-dot"></i></div>
-          <div><h4>Adresse</h4><p>11360 R. Sherbrooke E,<br>Montréal-Est, QC H1B 1B9</p></div>
+          <div><h4 class="i18n" data-fr="Adresse" data-en="Address">Adresse</h4><p>11360 R. Sherbrooke E,<br>Montréal-Est, QC H1B 1B9</p></div>
         </div>
         <div class="info-ligne">
           <div class="ico"><i class="fa-solid fa-phone"></i></div>
-          <div><h4>Téléphone</h4><a href="tel:+15146233766">(514) 623-3766</a></div>
+          <div><h4 class="i18n" data-fr="Téléphone" data-en="Phone">Téléphone</h4><a href="tel:+15146233766">(514) 623-3766</a></div>
         </div>
         <div class="info-ligne">
           <div class="ico"><i class="fa-solid fa-clock"></i></div>
-          <div><h4>Heures</h4><p>Ouvert 24h/24, 7 jours/7</p></div>
+          <div><h4 class="i18n" data-fr="Heures" data-en="Hours">Heures</h4><p class="i18n" data-fr="Ouvert 24h/24, 7 jours/7" data-en="Open 24/7">Ouvert 24h/24, 7 jours/7</p></div>
         </div>
         <div class="info-ligne">
           <div class="ico"><i class="fa-solid fa-credit-card"></i></div>
-          <div><h4>Paiement</h4><p>Visa · Mastercard · comptant · monnaie</p></div>
+          <div><h4 class="i18n" data-fr="Paiement" data-en="Payment">Paiement</h4><p class="i18n" data-fr="Visa · Mastercard · comptant · monnaie" data-en="Visa · Mastercard · cash · coins">Visa · Mastercard · comptant · monnaie</p></div>
         </div>
         <div class="contact-boutons">
-          <a href="tel:+15146233766" class="btn btn-jaune"><i class="fa-solid fa-phone"></i> Appeler</a>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=11360+Rue+Sherbrooke+Est,+Montr%C3%A9al-Est,+QC+H1B+1B9" target="_blank" rel="noopener" class="btn btn-bleu"><i class="fa-solid fa-location-dot"></i> Itinéraire</a>
+          <a href="tel:+15146233766" class="btn btn-jaune"><i class="fa-solid fa-phone"></i> <span class="i18n" data-fr="Appeler" data-en="Call">Appeler</span></a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=11360+Rue+Sherbrooke+Est,+Montr%C3%A9al-Est,+QC+H1B+1B9" target="_blank" rel="noopener" class="btn btn-bleu"><i class="fa-solid fa-location-dot"></i> <span class="i18n" data-fr="Itinéraire" data-en="Directions">Itinéraire</span></a>
         </div>
       </div>
       <div class="carte-maps reveal">
@@ -486,13 +484,13 @@
 <!-- ===================== PIED DE PAGE ===================== -->
 <footer>
   <div class="contenu">
-    <img src="preview%20(6).webp" alt="Lave-Auto Express.Net" class="logo-img">
+    <img src="preview%20(6).webp" alt="Lave-Auto Express.Net" class="logo-img" style="margin:0 auto 16px;border-radius:14px;">
     <div>
-      <a href="https://www.facebook.com/p/Lave-Auto-ExpressNet-100054612331796/" target="_blank" rel="noopener" class="reseau"><i class="fa-brands fa-facebook-f"></i> Suivez-nous sur Facebook</a>
+      <a href="https://www.facebook.com/p/Lave-Auto-ExpressNet-100054612331796/" target="_blank" rel="noopener" class="reseau"><i class="fa-brands fa-facebook-f"></i> <span class="i18n" data-fr="Suivez-nous sur Facebook" data-en="Follow us on Facebook">Suivez-nous sur Facebook</span></a>
     </div>
     <p class="adr">11360 R. Sherbrooke E, Montréal-Est, QC H1B 1B9 · (514) 623-3766</p>
-    <p class="adr">Toujours ouvert · 24h/24 · 7 jours/7</p>
-    <p class="droits">© 2026 Lave-Auto Express.Net. Tous droits réservés.</p>
+    <p class="adr i18n" data-fr="Toujours ouvert · 24h/24 · 7 jours/7" data-en="Always open · 24/7">Toujours ouvert · 24h/24 · 7 jours/7</p>
+    <p class="droits i18n" data-fr="© 2026 Lave-Auto Express.Net. Tous droits réservés." data-en="© 2026 Lave-Auto Express.Net. All rights reserved.">© 2026 Lave-Auto Express.Net. Tous droits réservés.</p>
   </div>
 </footer>
 
@@ -501,6 +499,26 @@
 <script>
   function basculerMenu(){document.getElementById('menu').classList.toggle('ouvert');}
   function fermerMenu(){document.getElementById('menu').classList.remove('ouvert');}
+
+  /* ===== LANGUE FR / EN ===== */
+  var langue = 'fr';
+  try{ var sauve = localStorage.getItem('langExpress'); if(sauve==='en'||sauve==='fr') langue = sauve; }catch(e){}
+  function appliquerLangue(l){
+    langue = l;
+    document.documentElement.lang = (l==='en') ? 'en-CA' : 'fr-CA';
+    document.title = (l==='en')
+      ? 'Lave-Auto Express.Net — Always open 24/7 | Montréal-Est'
+      : 'Lave-Auto Express.Net — Toujours ouvert 24h/24, 7j/7 | Montréal-Est';
+    var els = document.querySelectorAll('.i18n');
+    for(var i=0;i<els.length;i++){
+      var v = els[i].getAttribute('data-'+l);
+      if(v!==null) els[i].textContent = v;
+    }
+    var lab = document.getElementById('langue-label');
+    if(lab) lab.textContent = (l==='fr') ? 'EN' : 'FR';
+    try{ localStorage.setItem('langExpress', l); }catch(e){}
+  }
+  function basculerLangue(){ appliquerLangue(langue==='fr' ? 'en' : 'fr'); }
 
   /* Bulles d'eau animées dans le héro */
   (function(){
@@ -525,15 +543,18 @@
     var elems = document.querySelectorAll('.reveal');
     if(!('IntersectionObserver' in window)){
       elems.forEach(function(e){e.classList.add('vu');});
-      return;
+    } else {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ en.target.classList.add('vu'); obs.unobserve(en.target); }
+        });
+      },{threshold:0.12});
+      elems.forEach(function(e){obs.observe(e);});
     }
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add('vu'); obs.unobserve(en.target); }
-      });
-    },{threshold:0.12});
-    elems.forEach(function(e){obs.observe(e);});
   })();
+
+  /* Appliquer la langue au chargement */
+  appliquerLangue(langue);
 </script>
 
 </body>
